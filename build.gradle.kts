@@ -4,7 +4,7 @@ plugins {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(26))
+        languageVersion = JavaLanguageVersion.of(26)
     }
 }
 group = "org.dsilva.dev"

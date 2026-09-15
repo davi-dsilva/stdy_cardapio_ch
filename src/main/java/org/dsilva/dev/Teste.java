@@ -14,4 +14,13 @@ void main() {
     IO.println("Valor Desconto: " + valorDesconto);
 
     IO.println("Preço com desconto (calculado): " + (preco - valorDesconto)); //o Parenteses Altera a procedencia da opecao para Não dar erro de
+
+    int x = 11;
+    int y = 2;
+    int z = x / y;
+
+    IO.println(z);
+
+    int w = x % y;
+    IO.println(w);
 }

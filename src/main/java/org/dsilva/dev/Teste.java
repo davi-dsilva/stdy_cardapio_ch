@@ -6,22 +6,23 @@ void main() {
     var preco = 3.50;
     var precoComDesconto = 2.99;
     var id = 3_000_000_000L;
+    int categoria = 2;
+
+
 
     double porcentagemDesconto = (preco - precoComDesconto) / preco;
 
     System.out.println("Porcentagem de Desconto: " + porcentagemDesconto);
+    /*
+     * 1 - categorias
+     * 2 - Entradas
+     * 3 - Sobremesas
+     * 4 - Bebidas*/
 
-    double valorDesconto = preco * porcentagemDesconto;
-    IO.println("Valor Desconto: " + valorDesconto);
-
-    IO.println("Preço com desconto (calculado): " + (preco - valorDesconto)); //o Parenteses Altera a procedencia da opecao para Não dar erro de
-
-    int x = 11;
-    int y = 2;
-    int z = x / y;
-
-    IO.println(z);
-
-    int w = x % y;
-    IO.println(w);
+    if (emPromocao){
+        IO.println("Preco: de " + preco + " por " + precoComDesconto);
+    } else {
+        IO.print("Preco: " + preco);
+    }
 }
+

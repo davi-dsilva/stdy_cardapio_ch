@@ -6,7 +6,7 @@ void main() {
     var preco = 3.50;
     var precoComDesconto = 2.99;
     var id = 3_000_000_000L;
-    int categoria = 1;
+    int categoria = 5;
 
     double porcentagemDesconto = (preco - precoComDesconto) / preco;
 
@@ -27,12 +27,14 @@ void main() {
 
     if (categoria == 1){ //comparacao da variavel com o valor igual == diferente !=
                 IO.println("Categoria: Entradas");
-    }if (categoria == 2){ //comparacao da variavel com o valor igual == diferente !=
+    }else if (categoria == 2){ //comparacao da variavel com o valor igual == diferente !=
                 IO.println("Categoria: Pratos Principais");
-    }if (categoria == 3){ //comparacao da variavel com o valor igual == diferente !=
+    }else if (categoria == 3){ //comparacao da variavel com o valor igual == diferente !=
                 IO.println("Categoria: Sobremesas");
-    }if (categoria == 4){ //comparacao da variavel com o valor igual == diferente !=
+    }else if (categoria == 4){ //comparacao da variavel com o valor igual == diferente !=
                 IO.println("Categoria: Bebidas");
+    }else{
+        IO.println("Categoria Não foi encontrada");
     }
 }
 

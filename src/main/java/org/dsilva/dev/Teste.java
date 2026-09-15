@@ -52,7 +52,6 @@ void main() {
         break;
         default:
             IO.println("Categoria Não foi encontrada");
-            break;
 
     }
 }

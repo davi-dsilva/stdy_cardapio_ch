@@ -2,6 +2,11 @@ plugins {
     id("java")
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(26))
+    }
+}
 group = "org.dsilva.dev"
 version = "1.0-SNAPSHOT"
 

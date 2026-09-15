@@ -6,7 +6,7 @@ void main() {
     var preco = 3.50;
     var precoComDesconto = 2.99;
     var id = 3_000_000_000L;
-    int categoria = 5;
+    int categoria = 2;
 
     double porcentagemDesconto = (preco - precoComDesconto) / preco;
 
@@ -35,6 +35,25 @@ void main() {
                 IO.println("Categoria: Bebidas");
     }else{
         IO.println("Categoria Não foi encontrada");
+    }
+
+    switch (categoria){
+        case 1:
+        IO.println("Categoria: Entradas");
+        break;
+         case 2:
+        IO.println("Categoria: Pratos Principais");
+        break;
+         case 3:
+        IO.println("Categoria: Sobremesas");
+        break;
+         case 4:
+        IO.println("Categoria: Bebidas");
+        break;
+        default:
+            IO.println("Categoria Não foi encontrada");
+            break;
+
     }
 }
 

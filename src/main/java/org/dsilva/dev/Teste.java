@@ -12,4 +12,6 @@ void main() {
 
     double valorDesconto = preco * porcentagemDesconto;
     IO.println("Valor Desconto: " + valorDesconto);
+
+    IO.println("Preço com desconto (calculado): " + (preco - valorDesconto)); //o Parenteses Altera a procedencia da opecao para Não dar erro de
 }

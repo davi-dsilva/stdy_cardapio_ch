@@ -1,10 +1,11 @@
 void main() {
-    String nome = "Sanduiche de Presunto do Chaves";
-    String descricao = "Sanduiche de presunto simples, mas feito com muito amor.";
-    boolean emPromocao = true;
-    double preco = 3.50;
-    double precoComDesconto = 2.99;
-    long id = 3_000_000_000L;
+    //Inferencia de tipos com declaracao com var
+    var nome = "Sanduiche de Presunto do Chaves";
+    var descricao = "Sanduiche de presunto simples, mas feito com muito amor.";
+    var emPromocao = true;
+    var preco = 3.50;
+    var precoComDesconto = 2.99;
+    var id = 3_000_000_000L;
 
     double porcentagemDesconto = (preco - precoComDesconto) / preco;
 

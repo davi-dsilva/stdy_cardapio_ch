@@ -75,5 +75,8 @@ IO.println("-".repeat(50));
     precos[4] = 2.50;
     precos[5] = 4.99;
     precos[6] = 25.90;
+
+    IO.println("Preco do Item 3: " + precos[2]);
+    IO.println("Tamanho do array: " + precos.length);
 }
 

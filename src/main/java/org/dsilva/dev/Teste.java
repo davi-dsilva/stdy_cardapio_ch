@@ -118,5 +118,11 @@ IO.println("-".repeat(50));
     }
     IO.println("Soma dos preços: " + totalDePrecos);
 
+    double totalDePrecosComForEach =0.0;
+    for (double preco : precos) {
+        totalDePrecosComForEach += preco;
+    }
+    IO.println("Soma dos preços (com for each): " + totalDePrecosComForEach);
+
 }
 

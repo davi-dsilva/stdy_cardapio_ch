@@ -76,7 +76,7 @@ IO.println("-".repeat(50));
     precos[5] = 4.99;
     precos[6] = 25.90;
 
-    boolean [] emPromocao = { false, true, true, true , false, false, false};
+    boolean [] emPromocao = { true, true, false, true , true, false, false};
 
 
     IO.println("Preco do Item 3: " + precos[2]);
@@ -84,7 +84,7 @@ IO.println("-".repeat(50));
     IO.println("Tamanho do array emPromocao: " + emPromocao.length);
     IO.println("O segundo item tem promocao? " + emPromocao[1]);
 
-    IO.println("*".repeat(50) + "Laço de Repetição" + "*".repeat(50));
+    IO.println("*".repeat(50) + "Laços de Repetição" + "*".repeat(50));
     double totalDePrecos = 0.0;
     int i = 0;
 
@@ -95,5 +95,17 @@ IO.println("-".repeat(50));
         i ++;
     }
     IO.println("Soma dos precos: " + totalDePrecos);
+
+    int totalDeItensEmPromocao = 0;
+    int j = emPromocao.length - 1;
+    do {
+        IO.println("Rodou " +j);
+        if (emPromocao[j]){
+
+            totalDeItensEmPromocao ++;
+    }
+        j --;
+    }while (j >= 0);
+    IO.println("Quantidade de itens em promoção: " + totalDeItensEmPromocao);
 }
 

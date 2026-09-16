@@ -87,7 +87,7 @@ IO.println("-".repeat(50));
     IO.println("*".repeat(50) + "Laços de Repetição" + "*".repeat(50));
     double totalDePrecos = 0.0;
     int i = 0;
-
+    System.out.println("WHILE");
     while (i < precos.length) {
         IO.println("rodou " + i);
         double preco = precos[i];
@@ -95,7 +95,7 @@ IO.println("-".repeat(50));
         i ++;
     }
     IO.println("Soma dos precos: " + totalDePrecos);
-
+    System.out.println("do WHILE");
     int totalDeItensEmPromocao = 0;
     int j = emPromocao.length - 1;
     do {
@@ -107,5 +107,16 @@ IO.println("-".repeat(50));
         j --;
     }while (j >= 0);
     IO.println("Quantidade de itens em promoção: " + totalDeItensEmPromocao);
+
+    System.out.println("for");
+
+    double totalDePrecosComFor = 0.0;
+    for (int k = 0; k < precos.length; k++) {
+        IO.println("Rodou " + k);
+        double preco = precos[k];
+        totalDePrecosComFor += preco;
+    }
+    IO.println("Soma dos preços: " + totalDePrecos);
+
 }
 

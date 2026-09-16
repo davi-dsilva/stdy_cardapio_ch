@@ -83,5 +83,17 @@ IO.println("-".repeat(50));
     IO.println("Tamanho do array: " + precos.length);
     IO.println("Tamanho do array emPromocao: " + emPromocao.length);
     IO.println("O segundo item tem promocao? " + emPromocao[1]);
+
+    IO.println("*".repeat(50) + "Laço de Repetição" + "*".repeat(50));
+    double totalDePrecos = 0.0;
+    int i = 0;
+
+    while (i < precos.length) {
+        IO.println("rodou " + i);
+        double preco = precos[i];
+        totalDePrecos = totalDePrecos + preco;
+        i ++;
+    }
+    IO.println("Soma dos precos: " + totalDePrecos);
 }
 

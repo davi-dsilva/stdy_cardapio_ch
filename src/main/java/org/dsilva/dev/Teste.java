@@ -76,7 +76,12 @@ IO.println("-".repeat(50));
     precos[5] = 4.99;
     precos[6] = 25.90;
 
+    boolean [] emPromocao = { false, true, true, true , false, false, false};
+
+
     IO.println("Preco do Item 3: " + precos[2]);
     IO.println("Tamanho do array: " + precos.length);
+    IO.println("Tamanho do array emPromocao: " + emPromocao.length);
+    IO.println("O segundo item tem promocao? " + emPromocao[1]);
 }
 

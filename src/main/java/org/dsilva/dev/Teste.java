@@ -124,5 +124,29 @@ IO.println("-".repeat(50));
     }
     IO.println("Soma dos preços (com for each): " + totalDePrecosComForEach);
 
+
+    // Achar o primeiro preco que é maior que 10
+    double precoLimite = 10.0;
+    double precoMaiorQueLimite = -1.0;
+
+    for (double preco: precos) {
+        if (preco > precoLimite) {
+            precoMaiorQueLimite = preco;
+            break;
+        }
+
+    }
+    IO.println("Primeiro Preço maior que " + precoLimite + ": " + precoMaiorQueLimite);
+
+    //Todos os preços menos que o Limite
+
+    for (double preco : precos) {
+        if (preco <= precoLimite){
+            IO.println("Preço menor que " + precoLimite + ": " + preco);
+        }
+
+    }
+
+
 }
 

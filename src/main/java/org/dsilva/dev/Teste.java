@@ -13,13 +13,13 @@ void main() {
         int categoria;
 
         // construtor - serve para definir como o objeti irá ser criado
-        ItemCardapio(long idParam, String nomeParam, String descricaoParam, double precoParam, int categoriaParam){
+        ItemCardapio(long id, String nome, String descricao, double preco, int categoria){
             //parametros = objeto;
-            idParam = id;
-            nomeParam = nome;
-            descricaoParam = descricao;
-            precoParam = preco;
-            categoriaParam = categoria;
+            this.id = id;
+            this.nome = nome;
+            this.descricao = descricao;
+            this.preco = preco;
+            this.categoria = categoria;
         }
         //Métodos
         double calculaPorcentagemDesconto(){
@@ -55,6 +55,12 @@ void main() {
     ItemCardapio item1 = new ItemCardapio(1L,"Refresco do Chaves","Suco de limão que parece de tamarindo e tem gosto de groselha",2.99, 4);
     item1.emPromocao = false;
 
+    var item2 = new ItemCardapio(3_000_000_001L, "Sanduiche de Presunto do Chaves",
+            "Sanduiche de presunto simples, mas feito com muito amor.",3.50, 2);
+    item2.emPromocao = true;
+    item2.precoComDesconto = 2.99;
+
+
     System.out.println("nome: " + item1.nome +
             "\ndescição: " + item1.descricao +
             "\nestá em promoção: " + item1.emPromocao +
@@ -62,14 +68,6 @@ void main() {
             "\nid: " + item1.id +
             "\ncategoria: " + item1.obtemNomeCategoria());
 
-    var item2 = new ItemCardapio();
-    item2.nome = "Sanduiche de Presunto do Chaves";
-    item2.descricao = "Sanduiche de presunto simples, mas feito com muito amor.";
-    item2.emPromocao = true;
-    item2.preco = 3.50;
-    item2.precoComDesconto = 2.99;
-    item2.id = 3_000_000_001L;
-    item2.categoria = 2;
 
     System.out.println("nome: " + item2.nome +
             "\ndescição: " + item2.descricao +

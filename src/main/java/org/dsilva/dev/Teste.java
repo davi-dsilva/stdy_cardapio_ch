@@ -13,7 +13,14 @@ void main() {
         int categoria;
 
         // construtor - serve para definir como o objeti irá ser criado
-
+        ItemCardapio(long idParam, String nomeParam, String descricaoParam, double precoParam, int categoriaParam){
+            //parametros = objeto;
+            idParam = id;
+            nomeParam = nome;
+            descricaoParam = descricao;
+            precoParam = preco;
+            categoriaParam = categoria;
+        }
         //Métodos
         double calculaPorcentagemDesconto(){
             return (preco - precoComDesconto) / preco * 100;
@@ -41,18 +48,12 @@ void main() {
             }
         return nomeCategoria;
         }
+
+
     }
-    //Inferencia de tipos com declaracao com var
-
-    //instanciando a classe ItemCardapio
-    ItemCardapio item1 = new ItemCardapio();
-
-    item1.nome = "Refresco do Chaves";
-    item1.descricao = "Suco de limão que parece de tamarindo e tem gosto de groselha";
+    //instanciando a classe ItemCardapio com construtor
+    ItemCardapio item1 = new ItemCardapio(1L,"Refresco do Chaves","Suco de limão que parece de tamarindo e tem gosto de groselha",2.99, 4);
     item1.emPromocao = false;
-    item1.preco = 2.99;
-    item1.id = 1L;
-    item1.categoria = 4;
 
     System.out.println("nome: " + item1.nome +
             "\ndescição: " + item1.descricao +

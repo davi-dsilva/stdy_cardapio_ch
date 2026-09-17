@@ -1,11 +1,37 @@
+class ItemCardapio {
+    //  Aulas Sobre POO sintaxe de Classes
+
+    //atributos da classe
+    String nome;
+    String descricao;
+    boolean emPromocao;
+    double preco;
+    long id;
+    int categoria;
+
+
+}
+
 void main() {
     //Inferencia de tipos com declaracao com var
-    var nomeItem1 = "Refresco do Chaves";
-    var descricaoItem1 = "Suco de limão que parece de tamarindo e tem gosto de groselha";
-    var emPromocaoItem1 = false;
-    var precoItem1 = 2.99;
-    var idItem1 = 1L;
-    int categoriaItem1 = 4;
+
+
+    //instanciando a classe ItemCardapio
+    ItemCardapio item1 = new ItemCardapio();
+    item1.nome = "Refresco do Chaves";
+    item1.descricao = "Suco de limão que parece de tamarindo e tem gosto de groselha";
+    item1.emPromocao = false;
+    item1.preco = 2.99;
+    item1.id = 1L;
+    item1.categoria = 4;
+
+    System.out.println("nome: " + item1.nome +
+            "\ndescição: " + item1.descricao +
+            "\nestá em promoção: " + item1.emPromocao +
+            "\npreço: " + item1.preco +
+            "\nid: " + item1.id +
+            "\ncategoria: " + item1.categoria);
+
 
     var nomeItem2 = "Sanduiche de Presunto do Chaves";
     var descricaoItem2 = "Sanduiche de presunto simples, mas feito com muito amor.";
@@ -15,6 +41,21 @@ void main() {
     var idItem2 = 3_000_000_001L;
     int categoriaItem2 = 2;
 
+
+    class ItemCardapio {
+        //  Aulas Sobre POO sintaxe de Classes
+
+        //atributos da classe
+        String nome;
+        String descricao;
+        boolean emPromocao;
+        double preco;
+        long id;
+        int categoria;
+
+
+    }
+
  //   double porcentagemDesconto = (preco - precoComDesconto) / preco;
 
 
@@ -23,7 +64,7 @@ void main() {
      * 2 - Pratos Principais
      * 3 - Sobremesas
      * 4 - Bebidas*/
-    IO.println("Nome: " + nomeItem1);
+    /*IO.println("Nome: " + nomeItem1);
     IO.println("----Item não está em promoção---");
     //--------------Operadores de condicao em Java ---------------------
 //    System.out.println("Porcentagem de Desconto: " + porcentagemDesconto);
@@ -43,7 +84,7 @@ void main() {
                 IO.println("Categoria: Bebidas");
     }else{
         IO.println("Categoria Não foi encontrada");
-    }
+    }*/
 IO.println("-".repeat(50));
     IO. println("Nome: " + nomeItem2);
     switch (categoriaItem2){
@@ -148,6 +189,7 @@ IO.println("-".repeat(50));
             IO.println("Processamento pesado para: " + preco); //só processar para valores maiores que 10
 
     }
+
 
 
 }

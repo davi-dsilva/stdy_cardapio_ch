@@ -17,6 +17,28 @@ void main() {
             return (preco - precoComDesconto) / preco * 100;
         }
 
+        String obtemNomeCategoria() {
+            IO.println("-".repeat(50));
+            String nomeCategoria;
+            switch (categoria) {
+                case 1:
+                    nomeCategoria = "Entradas";
+                    break;
+                case 2:
+                    nomeCategoria = "Pratos Principais";
+                    break;
+                case 3:
+                    nomeCategoria = "Sobremesas";
+                    break;
+                case 4:
+                    nomeCategoria = "Bebidas";
+                    break;
+                default:
+                    nomeCategoria = "Não foi encontrada uma Categoria";
+
+            }
+        return nomeCategoria;
+        }
     }
     //Inferencia de tipos com declaracao com var
 
@@ -34,7 +56,7 @@ void main() {
             "\nestá em promoção: " + item1.emPromocao +
             "\npreço: " + item1.preco +
             "\nid: " + item1.id +
-            "\ncategoria: " + item1.categoria);
+            "\ncategoria: " + item1.obtemNomeCategoria());
 
     var item2 = new ItemCardapio();
     item2.nome = "Sanduiche de Presunto do Chaves";
@@ -50,7 +72,7 @@ void main() {
             "\nestá em promoção: " + item2.emPromocao +
             "\npreço: " + item2.preco +
             "\nid: " + item2.id +
-            "\ncategoria: " + item2.categoria);
+            "\ncategoria: " + item2.obtemNomeCategoria());
 
 
  //   double porcentagemDesconto = (preco - precoComDesconto) / preco;
@@ -74,36 +96,9 @@ void main() {
         IO.println("Item não está em promoçao");
     }
 
-    if (item2.categoria == 1){ //comparacao da variavel com o valor igual == diferente !=
-                IO.println("Categoria: Entradas");
-    }else if (item2.categoria == 2){ //comparacao da variavel com o valor igual == diferente !=
-                IO.println("Categoria: Pratos Principais");
-    }else if (item2.categoria == 3){ //comparacao da variavel com o valor igual == diferente !=
-                IO.println("Categoria: Sobremesas");
-    }else if (item2.categoria == 4){ //comparacao da variavel com o valor igual == diferente !=
-                IO.println("Categoria: Bebidas");
-    }else{
-        IO.println("Categoria Não foi encontrada");
-    }
-IO.println("-".repeat(50));
     IO. println("Nome: " + item2.nome);
-    switch (item2.categoria){
-        case 1:
-        IO.println("Categoria: Entradas");
-        break;
-         case 2:
-        IO.println("Categoria: Pratos Principais");
-        break;
-         case 3:
-        IO.println("Categoria: Sobremesas");
-        break;
-         case 4:
-        IO.println("Categoria: Bebidas");
-        break;
-        default:
-            IO.println("Categoria Não foi encontrada");
+    IO.println("Categoria: " + item2.obtemNomeCategoria());
 
-    }
 
     IO.println("*".repeat(50) + "arrays" + "*".repeat(50));
 

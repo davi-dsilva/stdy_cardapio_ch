@@ -1,21 +1,24 @@
-class ItemCardapio {
-    //  Aulas Sobre POO sintaxe de Classes
-
-    //atributos da classe
-    String nome;
-    String descricao;
-    boolean emPromocao;
-    double preco;
-    long id;
-    double precoComDesconto;
-    int categoria;
-
-
-}
 
 void main() {
-    //Inferencia de tipos com declaracao com var
+    class ItemCardapio {
+        //  Aulas Sobre POO sintaxe de Classes
 
+        //atributos da classe
+        String nome;
+        String descricao;
+        boolean emPromocao;
+        double preco;
+        long id;
+        double precoComDesconto;
+        int categoria;
+
+        //Métodos
+        double calculaPorcentagemDesconto(){
+            (item2.preco - item2.precoComDesconto) / item2.preco;
+        }
+
+    }
+    //Inferencia de tipos com declaracao com var
 
     //instanciando a classe ItemCardapio
     ItemCardapio item1 = new ItemCardapio();
@@ -48,19 +51,7 @@ void main() {
             "\npreço: " + item2.preco +
             "\nid: " + item2.id +
             "\ncategoria: " + item2.categoria);
-    class ItemCardapio {
-        //  Aulas Sobre POO sintaxe de Classes
 
-        //atributos da classe
-        String nome;
-        String descricao;
-        boolean emPromocao;
-        double preco;
-        long id;
-        int categoria;
-
-
-    }
 
  //   double porcentagemDesconto = (preco - precoComDesconto) / preco;
 
@@ -70,15 +61,18 @@ void main() {
      * 2 - Pratos Principais
      * 3 - Sobremesas
      * 4 - Bebidas*/
-    /*IO.println("Nome: " + nomeItem1);
+    IO.println("Nome: " + item2.nome);
     IO.println("----Item não está em promoção---");
     //--------------Operadores de condicao em Java ---------------------
-//    System.out.println("Porcentagem de Desconto: " + porcentagemDesconto);
-//    if (emPromocao){
-//        IO.println("Preco: de " + preco + " por " + precoComDesconto);
-//    } else {
-//        IO.print("Preco: " + preco);
-//    }
+
+    if (item2.emPromocao){
+        var porcentagemDesconto = item2.calculaPorcentagemDesconto();
+        System.out.println("Porcentagem de Desconto: " + porcentagemDesconto);
+        IO.println("Preco: de " + item2.preco + " por " + item2.precoComDesconto);
+    } else {
+        IO.print("Preco: " + item2.preco);
+        IO.println("Item não está em promoçao");
+    }
 
     if (categoriaItem1 == 1){ //comparacao da variavel com o valor igual == diferente !=
                 IO.println("Categoria: Entradas");
@@ -90,7 +84,7 @@ void main() {
                 IO.println("Categoria: Bebidas");
     }else{
         IO.println("Categoria Não foi encontrada");
-    }*/
+    }
 IO.println("-".repeat(50));
     IO. println("Nome: " + item2.nome);
     switch (item2.categoria){
@@ -110,7 +104,7 @@ IO.println("-".repeat(50));
             IO.println("Categoria Não foi encontrada");
 
     }
-/*
+
     IO.println("*".repeat(50) + "arrays" + "*".repeat(50));
 
     double [] precos = new double[7];
@@ -197,6 +191,6 @@ IO.println("-".repeat(50));
     }
 
 
-*/
+
 }
 

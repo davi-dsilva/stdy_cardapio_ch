@@ -7,6 +7,7 @@ class ItemCardapio {
     boolean emPromocao;
     double preco;
     long id;
+    double precoComDesconto;
     int categoria;
 
 
@@ -41,7 +42,12 @@ void main() {
     item2.id = 3_000_000_001L;
     item2.categoria = 2;
 
-
+    System.out.println("nome: " + item2.nome +
+            "\ndescição: " + item2.descricao +
+            "\nestá em promoção: " + item2.emPromocao +
+            "\npreço: " + item2.preco +
+            "\nid: " + item2.id +
+            "\ncategoria: " + item2.categoria);
     class ItemCardapio {
         //  Aulas Sobre POO sintaxe de Classes
 
@@ -86,8 +92,8 @@ void main() {
         IO.println("Categoria Não foi encontrada");
     }*/
 IO.println("-".repeat(50));
-    IO. println("Nome: " + nomeItem2);
-    switch (categoriaItem2){
+    IO. println("Nome: " + item2.nome);
+    switch (item2.categoria){
         case 1:
         IO.println("Categoria: Entradas");
         break;
@@ -104,7 +110,7 @@ IO.println("-".repeat(50));
             IO.println("Categoria Não foi encontrada");
 
     }
-
+/*
     IO.println("*".repeat(50) + "arrays" + "*".repeat(50));
 
     double [] precos = new double[7];
@@ -191,6 +197,6 @@ IO.println("-".repeat(50));
     }
 
 
-
+*/
 }
 

@@ -4,13 +4,15 @@ void main() {
         //  Aulas Sobre POO sintaxe de Classes
 
         //atributos da classe
+        long id;
         String nome;
         String descricao;
         boolean emPromocao;
         double preco;
-        long id;
         double precoComDesconto;
         int categoria;
+
+        // construtor - serve para definir como o objeti irá ser criado
 
         //Métodos
         double calculaPorcentagemDesconto(){
@@ -44,6 +46,7 @@ void main() {
 
     //instanciando a classe ItemCardapio
     ItemCardapio item1 = new ItemCardapio();
+
     item1.nome = "Refresco do Chaves";
     item1.descricao = "Suco de limão que parece de tamarindo e tem gosto de groselha";
     item1.emPromocao = false;

@@ -14,7 +14,7 @@ void main() {
 
         //Métodos
         double calculaPorcentagemDesconto(){
-            (item2.preco - item2.precoComDesconto) / item2.preco;
+            return (preco - precoComDesconto) / preco;
         }
 
     }
@@ -74,13 +74,13 @@ void main() {
         IO.println("Item não está em promoçao");
     }
 
-    if (categoriaItem1 == 1){ //comparacao da variavel com o valor igual == diferente !=
+    if (item2.categoria == 1){ //comparacao da variavel com o valor igual == diferente !=
                 IO.println("Categoria: Entradas");
-    }else if (categoriaItem1 == 2){ //comparacao da variavel com o valor igual == diferente !=
+    }else if (item2.categoria == 2){ //comparacao da variavel com o valor igual == diferente !=
                 IO.println("Categoria: Pratos Principais");
-    }else if (categoriaItem1 == 3){ //comparacao da variavel com o valor igual == diferente !=
+    }else if (item2.categoria == 3){ //comparacao da variavel com o valor igual == diferente !=
                 IO.println("Categoria: Sobremesas");
-    }else if (categoriaItem1 == 4){ //comparacao da variavel com o valor igual == diferente !=
+    }else if (item2.categoria == 4){ //comparacao da variavel com o valor igual == diferente !=
                 IO.println("Categoria: Bebidas");
     }else{
         IO.println("Categoria Não foi encontrada");

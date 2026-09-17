@@ -32,14 +32,14 @@ void main() {
             "\nid: " + item1.id +
             "\ncategoria: " + item1.categoria);
 
-
-    var nomeItem2 = "Sanduiche de Presunto do Chaves";
-    var descricaoItem2 = "Sanduiche de presunto simples, mas feito com muito amor.";
-    var emPromocaoItem2 = true;
-    var precoItem2 = 3.50;
-    var precoComDescontoItem2 = 2.99;
-    var idItem2 = 3_000_000_001L;
-    int categoriaItem2 = 2;
+    var item2 = new ItemCardapio();
+    item2.nome = "Sanduiche de Presunto do Chaves";
+    item2.descricao = "Sanduiche de presunto simples, mas feito com muito amor.";
+    item2.emPromocao = true;
+    item2.preco = 3.50;
+    item2.precoComDesconto = 2.99;
+    item2.id = 3_000_000_001L;
+    item2.categoria = 2;
 
 
     class ItemCardapio {

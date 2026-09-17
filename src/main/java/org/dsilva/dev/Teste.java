@@ -14,7 +14,7 @@ void main() {
 
         //Métodos
         double calculaPorcentagemDesconto(){
-            return (preco - precoComDesconto) / preco;
+            return (preco - precoComDesconto) / preco * 100;
         }
 
     }

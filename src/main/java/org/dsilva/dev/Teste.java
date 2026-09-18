@@ -50,7 +50,7 @@ void main() {
         return nomeCategoria;
         }
 
-        void definePromocao (double precoComDesconto){ //método void
+        void definePromocao (double precoComDesconto){ //método void se estiver emPromocao == true e define o valor da promocao
             emPromocao = true;
             this.precoComDesconto = precoComDesconto;
         }
@@ -62,17 +62,17 @@ void main() {
     item1.emPromocao = false;
 
     var item2 = new ItemCardapio(3_000_000_001L, "Sanduiche de Presunto do Chaves", "Sanduiche de presunto simples, mas feito com muito amor.",3.50, 2);
-    item2.emPromocao = true;
-    item2.precoComDesconto = 2.99;
-
     //Imprimindo os objetos
-    System.out.println("nome: " + item1.nome + "\ndescição: " + item1.descricao + "\nestá em promoção: " + item1.emPromocao + "\npreço: " + item1.preco + "\nid: " + item1.id + "\ncategoria: " + item1.obtemNomeCategoria());
-    System.out.println("nome: " + item2.nome + "\ndescição: " + item2.descricao + "\nestá em promoção: " + item2.emPromocao + "\npreço: " + item2.preco + "\nid: " + item2.id + "\ncategoria: " + item2.obtemNomeCategoria());
+    System.out.println("id: " + item1.id +"\nnome: " + item1.nome + "\ndescição: " + item1.descricao + "\nestá em promoção: " + item1.emPromocao + "\npreço: " + item1.preco + "\ncategoria: " + item1.obtemNomeCategoria());
+    IO.println("*_*".repeat(50));
 
     item2.definePromocao(2.99);
-    IO.println("Nome: " + item2.nome);
-    IO.println("Em promoção: " + item2.emPromocao);
+    System.out.println("id: " + item2.id +"\nnome: " + item2.nome + "\ndescição: " + item2.descricao + "\nestá em promoção: " + item2.emPromocao + "\npreço: " + item2.preco + "\ncategoria: " + item2.obtemNomeCategoria());
     IO.println("Preço com desconto: " + item2.precoComDesconto);
+    IO.println("*_*".repeat(50));
+
+
+
     //--------------Operadores de condicao em Java ---------------------
 
     if (item2.emPromocao){

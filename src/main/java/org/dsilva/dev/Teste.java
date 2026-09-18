@@ -60,6 +60,21 @@ void main() {
     var item2 = new ItemCardapio(3_000_000_001L, "Sanduiche de Presunto do Chaves", "Sanduiche de presunto simples, mas feito com muito amor.",3.50, 2);
     item2.definePromocao(2.99);
 
+    var item3 = new ItemCardapio(3L, "Torta de Frango da Dona Florinda", "Torta de frango com recheio cremoso e massa crocante.", 12.99,2);
+    item3.definePromocao(10.99);
+
+    var item4 = new ItemCardapio(4L, "Pipoca do Quico","Balde de pipoca preparado com carinho pelo quico",4.99,2);
+    item4.definePromocao(3.99);
+
+    var item5 = new ItemCardapio(5L, "Água de Jamaica", "Água aromatizada com hibisco e toque de açúcar.",2.50, 4);
+    item4.definePromocao(2.00);
+
+    var item6 = new ItemCardapio(6L, "Churros do Chaves", "Churros recheados com doce de leite, clássicos e irresistíveis.", 4.99,3);
+    item4.definePromocao(3.99);
+
+    var item7 = new ItemCardapio(7L, "Tacos de Carnitas", "Tacos recheados com carne tenra", 25.90, 2);
+
+
     //Imprimindo os objetos
     System.out.println("id: " + item1.id +"\nnome: " + item1.nome + "\ndescição: " + item1.descricao + "\nestá em promoção: " + item1.emPromocao + "\npreço: " + item1.preco + "\ncategoria: " + item1.obtemNomeCategoria());
     IO.println("*_*".repeat(50));

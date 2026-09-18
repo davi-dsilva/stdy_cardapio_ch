@@ -84,6 +84,29 @@ void main() {
     IO.println("Preço com desconto: " + item2.precoComDesconto);
     IO.println("*_*".repeat(50));
 
+    System.out.println("id: " + item3.id +"\nnome: " + item3.nome + "\ndescição: " + item3.descricao + "\nestá em promoção: " + item3.emPromocao + "\npreço: " + item3.preco + "\ncategoria: " + item3.obtemNomeCategoria());
+    IO.println("Preço com desconto: " + item3.precoComDesconto);
+    IO.println("*_*".repeat(50));
+
+    System.out.println("id: " + item4.id +"\nnome: " + item4.nome + "\ndescição: " + item4.descricao + "\nestá em promoção: " + item4.emPromocao + "\npreço: " + item4.preco + "\ncategoria: " + item4.obtemNomeCategoria());
+    IO.println("Preço com desconto: " + item4.precoComDesconto);
+    IO.println("*_*".repeat(50));
+
+    System.out.println("id: " + item5.id +"\nnome: " + item5.nome + "\ndescição: " + item5.descricao + "\nestá em promoção: " + item5.emPromocao + "\npreço: " + item5.preco + "\ncategoria: " + item5.obtemNomeCategoria());
+    IO.println("Preço com desconto: " + item5.precoComDesconto);
+    IO.println("*_*".repeat(50));
+
+    System.out.println("id: " + item6.id +"\nnome: " + item6.nome + "\ndescição: " + item6.descricao + "\nestá em promoção: " + item6.emPromocao + "\npreço: " + item6.preco + "\ncategoria: " + item6.obtemNomeCategoria());
+    IO.println("Preço com desconto: " + item6.precoComDesconto);
+    IO.println("*_*".repeat(50));
+
+    System.out.println("id: " + item7.id +"\nnome: " + item7.nome + "\ndescição: " + item7.descricao + "\nestá em promoção: " + item7.emPromocao + "\npreço: " + item7.preco + "\ncategoria: " + item7.obtemNomeCategoria());
+    //IO.println("Preço com desconto: " + item7.precoComDesconto);
+    IO.println("*_*".repeat(50));
+
+
+
+
 
 
     //--------------Operadores de condicao em Java ---------------------

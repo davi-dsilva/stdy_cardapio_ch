@@ -50,7 +50,7 @@ void main() {
         return nomeCategoria;
         }
 
-        void definePromocao (double precoComDesconto){
+        void definePromocao (double precoComDesconto){ //método void
             emPromocao = true;
             this.precoComDesconto = precoComDesconto;
         }

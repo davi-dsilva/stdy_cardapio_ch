@@ -28,24 +28,13 @@ void main() {
 
         String obtemNomeCategoria() {
 
-            String nomeCategoria;
-            switch (categoria) {
-                case 1:
-                    nomeCategoria = "Entradas";
-                    break;
-                case 2:
-                    nomeCategoria = "Pratos Principais";
-                    break;
-                case 3:
-                    nomeCategoria = "Sobremesas";
-                    break;
-                case 4:
-                    nomeCategoria = "Bebidas";
-                    break;
-                default:
-                    nomeCategoria = "Não foi encontrada uma Categoria";
-
-            }
+            String nomeCategoria = switch (categoria) {
+                case 1 -> "Entradas";
+                case 2 -> "Pratos Principais";
+                case 3 -> "Sobremesas";
+                case 4 -> "Bebidas";
+                default -> "Não foi encontrada uma Categoria";
+            };
             IO.println("-".repeat(50));
         return nomeCategoria;
         }

@@ -27,7 +27,7 @@ void main() {
         }
 
         String obtemNomeCategoria() {
-            IO.println("-".repeat(50));
+
             String nomeCategoria;
             switch (categoria) {
                 case 1:
@@ -46,7 +46,13 @@ void main() {
                     nomeCategoria = "Não foi encontrada uma Categoria";
 
             }
+            IO.println("-".repeat(50));
         return nomeCategoria;
+        }
+
+        void definePromocao (double precoComDesconto){
+            emPromocao = true;
+            this.precoComDesconto = precoComDesconto;
         }
 
 
@@ -55,38 +61,18 @@ void main() {
     ItemCardapio item1 = new ItemCardapio(1L,"Refresco do Chaves","Suco de limão que parece de tamarindo e tem gosto de groselha",2.99, 4);
     item1.emPromocao = false;
 
-    var item2 = new ItemCardapio(3_000_000_001L, "Sanduiche de Presunto do Chaves",
-            "Sanduiche de presunto simples, mas feito com muito amor.",3.50, 2);
+    var item2 = new ItemCardapio(3_000_000_001L, "Sanduiche de Presunto do Chaves", "Sanduiche de presunto simples, mas feito com muito amor.",3.50, 2);
     item2.emPromocao = true;
     item2.precoComDesconto = 2.99;
 
+    //Imprimindo os objetos
+    System.out.println("nome: " + item1.nome + "\ndescição: " + item1.descricao + "\nestá em promoção: " + item1.emPromocao + "\npreço: " + item1.preco + "\nid: " + item1.id + "\ncategoria: " + item1.obtemNomeCategoria());
+    System.out.println("nome: " + item2.nome + "\ndescição: " + item2.descricao + "\nestá em promoção: " + item2.emPromocao + "\npreço: " + item2.preco + "\nid: " + item2.id + "\ncategoria: " + item2.obtemNomeCategoria());
 
-    System.out.println("nome: " + item1.nome +
-            "\ndescição: " + item1.descricao +
-            "\nestá em promoção: " + item1.emPromocao +
-            "\npreço: " + item1.preco +
-            "\nid: " + item1.id +
-            "\ncategoria: " + item1.obtemNomeCategoria());
-
-
-    System.out.println("nome: " + item2.nome +
-            "\ndescição: " + item2.descricao +
-            "\nestá em promoção: " + item2.emPromocao +
-            "\npreço: " + item2.preco +
-            "\nid: " + item2.id +
-            "\ncategoria: " + item2.obtemNomeCategoria());
-
-
- //   double porcentagemDesconto = (preco - precoComDesconto) / preco;
-
-
-    /*
-     * 1 - Entradas
-     * 2 - Pratos Principais
-     * 3 - Sobremesas
-     * 4 - Bebidas*/
+    item2.definePromocao(2.99);
     IO.println("Nome: " + item2.nome);
-    IO.println("----Item não está em promoção---");
+    IO.println("Em promoção: " + item2.emPromocao);
+    IO.println("Preço com desconto: " + item2.precoComDesconto);
     //--------------Operadores de condicao em Java ---------------------
 
     if (item2.emPromocao){
@@ -97,7 +83,7 @@ void main() {
         IO.print("Preco: " + item2.preco);
         IO.println("Item não está em promoçao");
     }
-
+/*
     IO. println("Nome: " + item2.nome);
     IO.println("Categoria: " + item2.obtemNomeCategoria());
 
@@ -122,6 +108,7 @@ void main() {
     IO.println("Tamanho do array emPromocao: " + emPromocao.length);
     IO.println("O segundo item tem promocao? " + emPromocao[1]);
 
+     /*
     IO.println("*".repeat(50) + "Laços de Repetição" + "*".repeat(50));
     double totalDePrecos = 0.0;
     int i = 0;
@@ -133,6 +120,8 @@ void main() {
         i ++;
     }
     IO.println("Soma dos precos: " + totalDePrecos);
+
+
     System.out.println("do WHILE");
     int totalDeItensEmPromocao = 0;
     int j = emPromocao.length - 1;
@@ -187,7 +176,7 @@ void main() {
 
     }
 
-
+*/
 
 }
 

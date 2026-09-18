@@ -54,6 +54,13 @@ void main() {
             emPromocao = true;
             this.precoComDesconto = precoComDesconto;
         }
+        //Pense no objeto como uma ficha cadastral:
+        //
+        //Um método com return é como um funcionário que vai até a ficha, lê uma informação e grita a resposta para você ("O preço é 3.50!").
+        //
+        //Um método void é como um funcionário que vai até a ficha com uma caneta, apaga o valor antigo e escreve o novo valor lá dentro.
+        // Ele não grita nada para você (não tem return), mas a alteração física foi feita na ficha do item2.
+
 
 
     }

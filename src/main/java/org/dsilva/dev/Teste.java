@@ -54,7 +54,9 @@ void main() {
 */
     ItemCardapio[] cardapio = { item1, item2, item3, item4, item5, item6, item7 };
     String linha = IO.readln("Digite um ID de um item de cardápio");
-    IO.println(linha);
+    long idSelecionado = Long.parseLong(linha);
+    IO.println(idSelecionado);
+
 
     IO. println("Nome: " + item2.nome);
     IO.println("Categoria: " + item2.obtemNomeCategoria());

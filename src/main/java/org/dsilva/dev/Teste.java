@@ -22,11 +22,9 @@ void main() {
 
     var item7 = new ItemCardapio(7L, "Tacos de Carnitas", "Tacos recheados com carne tenra", 25.90, 2);
 
-
     //Imprimindo os objetos
     System.out.println("id: " + item1.id +"\nnome: " + item1.nome + "\ndescição: " + item1.descricao + "\nestá em promoção: " + item1.emPromocao + "\npreço: " + item1.preco + "\ncategoria: " + item1.obtemNomeCategoria());
     IO.println("*_*".repeat(50));
-
 
     System.out.println("id: " + item2.id +"\nnome: " + item2.nome + "\ndescição: " + item2.descricao + "\nestá em promoção: " + item2.emPromocao + "\npreço: " + item2.preco + "\ncategoria: " + item2.obtemNomeCategoria());
     IO.println("Preço com desconto: " + item2.precoComDesconto);
@@ -80,7 +78,6 @@ void main() {
     precos[6] = 25.90;
 
     boolean [] emPromocao = { true, true, false, true , true, false, false};
-
 
     IO.println("Preco do Item 3: " + precos[2]);
     IO.println("Tamanho do array: " + precos.length);

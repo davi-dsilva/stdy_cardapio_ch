@@ -1,6 +1,7 @@
 
 void main() {
 
+
     //instanciando a classe ItemCardapio com construtor
     ItemCardapio item1 = new ItemCardapio(1L,"Refresco do Chaves","Suco de limão que parece de tamarindo e tem gosto de groselha",2.99, 4);
     item1.emPromocao = false;
@@ -22,8 +23,7 @@ void main() {
 
     var item7 = new ItemCardapio(7L, "Tacos de Carnitas", "Tacos recheados com carne tenra", 25.90, 2);
 
-    /*
-    //Imprimindo os objetos
+    /*//Imprimindo os objetos
     System.out.println("id: " + item1.id +"\nnome: " + item1.nome + "\ndescição: " + item1.descricao + "\nestá em promoção: " + item1.emPromocao + "\npreço: " + item1.preco + "\ncategoria: " + item1.obtemNomeCategoria());
     IO.println("*_*".repeat(50));
 
@@ -49,24 +49,27 @@ void main() {
 
     System.out.println("id: " + item7.id +"\nnome: " + item7.nome + "\ndescição: " + item7.descricao + "\nestá em promoção: " + item7.emPromocao + "\npreço: " + item7.preco + "\ncategoria: " + item7.obtemNomeCategoria());
     //IO.println("Preço com desconto: " + item7.precoComDesconto);
-    IO.println("*_*".repeat(50));
+    IO.println("*_*".repeat(50));*/
 
-*/
     ItemCardapio[] cardapio = { item1, item2, item3, item4, item5, item6, item7 };
-    String linha = IO.readln("Digite um ID de um item de cardápio");
+
+    String linha = IO.readln("Digite um ID de um item de cardápio: ");
     long idSelecionado = Long.parseLong(linha);
     IO.println(idSelecionado);
+    ItemCardapio itemSelecionado = item2; //TODO trocar para buscar o id digitado
 
+    IO.println("ID : " + itemSelecionado.id);
+    IO.println("Nome: " + itemSelecionado.nome);
+    IO.println("Categoria: " + itemSelecionado.obtemNomeCategoria());
+    IO.println("Descrição: " + itemSelecionado.descricao);
+    IO.println("Em Promoção: " + itemSelecionado.emPromocao);
 
-    IO. println("Nome: " + item2.nome);
-    IO.println("Categoria: " + item2.obtemNomeCategoria());
-
-    if (item2.emPromocao){
-        var porcentagemDesconto = item2.calculaPorcentagemDesconto();
+    if (itemSelecionado.emPromocao){
+        var porcentagemDesconto = itemSelecionado.calculaPorcentagemDesconto();
         System.out.println("Porcentagem de Desconto: " + porcentagemDesconto);
-        IO.println("Preco: de " + item2.preco + " por " + item2.precoComDesconto);
+        IO.println("Preco: de " + itemSelecionado.preco + " por " + itemSelecionado.precoComDesconto);
     } else {
-        IO.print("Preco: " + item2.preco);
+        IO.print("Preco: " + itemSelecionado.preco);
         IO.println("Item não está em promoçao");
     }
 
@@ -81,12 +84,12 @@ void main() {
     precos[6] = 25.90;
 
     boolean [] emPromocao = { true, true, false, true , true, false, false};
-
+/*
     IO.println("Preco do Item 3: " + precos[2]);
     IO.println("Tamanho do array: " + precos.length);
     IO.println("Tamanho do array emPromocao: " + emPromocao.length);
     IO.println("O segundo item tem promocao? " + emPromocao[1]);
-
+*/
 }
 
 class ItemCardapio {
@@ -101,7 +104,7 @@ class ItemCardapio {
     double precoComDesconto;
     int categoria;
 
-    // construtor - serve para definir como o objeti irá ser criado
+    // construtor - serve para definir como o objeto irá ser criado
     ItemCardapio(long id, String nome, String descricao, double preco, int categoria){
         //parametros = objeto;
         this.id = id;

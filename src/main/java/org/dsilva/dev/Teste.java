@@ -51,12 +51,17 @@ void main() {
     //IO.println("Preço com desconto: " + item7.precoComDesconto);
     IO.println("*_*".repeat(50));*/
 
-    ItemCardapio[] cardapio = { item1, item2, item3, item4, item5, item6, item7 };
+    ItemCardapio[] cardapio = { item1, item2, item3, item4, item5, item6, item7 }; //criados anteriormente e armazenados em cardapio
 
     String linha = IO.readln("Digite um ID de um item de cardápio: ");
     long idSelecionado = Long.parseLong(linha);
-    IO.println(idSelecionado);
-    ItemCardapio itemSelecionado = item2; //TODO trocar para buscar o id digitado
+
+    ItemCardapio itemSelecionado = null;
+    for (ItemCardapio item  : cardapio){
+        if (item.id == idSelecionado){
+            itemSelecionado = item;
+        }
+    }
 
     IO.println("ID : " + itemSelecionado.id);
     IO.println("Nome: " + itemSelecionado.nome);

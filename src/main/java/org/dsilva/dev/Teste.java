@@ -22,6 +22,7 @@ void main() {
 
     var item7 = new ItemCardapio(7L, "Tacos de Carnitas", "Tacos recheados com carne tenra", 25.90, 2);
 
+    /*
     //Imprimindo os objetos
     System.out.println("id: " + item1.id +"\nnome: " + item1.nome + "\ndescição: " + item1.descricao + "\nestá em promoção: " + item1.emPromocao + "\npreço: " + item1.preco + "\ncategoria: " + item1.obtemNomeCategoria());
     IO.println("*_*".repeat(50));
@@ -50,8 +51,10 @@ void main() {
     //IO.println("Preço com desconto: " + item7.precoComDesconto);
     IO.println("*_*".repeat(50));
 
-
+*/
     ItemCardapio[] cardapio = { item1, item2, item3, item4, item5, item6, item7 };
+    String linha = IO.readln("Digite um ID de um item de cardápio");
+    IO.println(linha);
 
     IO. println("Nome: " + item2.nome);
     IO.println("Categoria: " + item2.obtemNomeCategoria());

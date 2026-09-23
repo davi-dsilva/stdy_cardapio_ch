@@ -52,6 +52,9 @@ void main() {
 
     //--------------Operadores de condicao em Java ---------------------
 
+    IO. println("Nome: " + item2.nome);
+    IO.println("Categoria: " + item2.obtemNomeCategoria());
+
     if (item2.emPromocao){
         var porcentagemDesconto = item2.calculaPorcentagemDesconto();
         System.out.println("Porcentagem de Desconto: " + porcentagemDesconto);
@@ -60,12 +63,6 @@ void main() {
         IO.print("Preco: " + item2.preco);
         IO.println("Item não está em promoçao");
     }
-
-    IO. println("Nome: " + item2.nome);
-    IO.println("Categoria: " + item2.obtemNomeCategoria());
-
-
-    IO.println("*".repeat(50) + "arrays" + "*".repeat(50));
 
     double [] precos = new double[7];
 

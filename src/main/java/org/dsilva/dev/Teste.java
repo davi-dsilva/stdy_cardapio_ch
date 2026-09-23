@@ -50,7 +50,8 @@ void main() {
     //IO.println("Preço com desconto: " + item7.precoComDesconto);
     IO.println("*_*".repeat(50));
 
-    //--------------Operadores de condicao em Java ---------------------
+
+    ItemCardapio[] cardapio = { item1, item2, item3, item4, item5, item6, item7 };
 
     IO. println("Nome: " + item2.nome);
     IO.println("Categoria: " + item2.obtemNomeCategoria());
@@ -64,8 +65,8 @@ void main() {
         IO.println("Item não está em promoçao");
     }
 
-    double [] precos = new double[7];
 
+    double [] precos = new double[7];
     precos[0] = 2.99 ;
     precos[1] = 3.50;
     precos[2] = 12.99;

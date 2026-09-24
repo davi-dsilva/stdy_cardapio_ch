@@ -40,6 +40,9 @@ void main() {
     IO.println("Soma dos Precos: " + cardapio.obtemSomaDosPrecos()); //criado novo método
     IO.println("Total de itens em promoção: " + cardapio.obtemTotalDeItensEmPromoção()); //criado novo método
 
+    double precoLimite = 10.0;
+    IO.println("O primeiro preço que é Maior que " + precoLimite + ": " + cardapio.obtemPrimeiroPrecoMaiorQueLimite(10.0));
+
     IO.println("ID : " + itemSelecionado.id);
 
 
@@ -58,14 +61,18 @@ void main() {
     }
 
 
-    double [] precos = new double[7];
+        IO.println("*".repeat(50) + "Laços de Repetição" + "*".repeat(50));
+    System.out.println("for");
+
+
+/*    double [] precos = new double[7];
     precos[0] = 2.99 ;
     precos[1] = 3.50;
     precos[2] = 12.99;
     precos[3] = 4.99;
     precos[4] = 2.50;
     precos[5] = 4.99;
-    precos[6] = 25.90;
+    precos[6] = 25.90;*/
 
     boolean [] emPromocao = { true, true, false, true , true, false, false};
 /*
@@ -74,6 +81,20 @@ void main() {
     IO.println("Tamanho do array emPromocao: " + emPromocao.length);
     IO.println("O segundo item tem promocao? " + emPromocao[1]);
 */
+
+/*    double totalDePrecosComFor = 0.0;
+    for (int k = 0; k < precos.length; k++) {
+        double preco = precos[k];
+        totalDePrecosComFor += preco;
+    }
+    IO.println("Soma dos preços: " + totalDePrecos);
+
+    double totalDePrecosComForEach =0.0;
+    for (double preco : precos) {
+        totalDePrecosComForEach += preco;
+    }
+    IO.println("Soma dos preços (com for each): " + totalDePrecosComForEach);*/
+
 }
 
 class ItemCardapio {
@@ -184,5 +205,20 @@ class Cardapio {
             }
         }
         return totalItensEmPromocao;
+    }
+
+
+    // Achar o primeiro preco que é maior que 10
+    double obtemPrimeiroPrecoMaiorQueLimite(double precoLimite){
+
+        double precoMaiorQueLimite = -1.0;
+        for (ItemCardapio item : itens) {
+            if (item.preco > precoLimite) {
+                precoMaiorQueLimite = item.preco;
+                break;
+            }
+
+        }
+        return precoMaiorQueLimite;
     }
 }

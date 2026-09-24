@@ -3,7 +3,7 @@ void main() {
 
 
     //instanciando a classe ItemCardapio com construtor
-    ItemCardapio item1 = new ItemCardapio(1L,"Refresco do Chaves","Suco de limão que parece de tamarindo e tem gosto de groselha",2.99, 4);
+    ItemCardapio item1 = new ItemCardapio(50L,"Refresco do Chaves","Suco de limão que parece de tamarindo e tem gosto de groselha",2.99, 4);
     item1.emPromocao = false;
 
     var item2 = new ItemCardapio(2L, "Sanduiche de Presunto do Chaves", "Sanduiche de presunto simples, mas feito com muito amor.",3.50, 2);
@@ -56,12 +56,12 @@ void main() {
     String linha = IO.readln("Digite um ID de um item de cardápio: "); //recebe valor
     long idSelecionado = Long.parseLong(linha); //armazena valor na variavel idSelecionado
 
-    ItemCardapio itemSelecionado = null; //inicia a váriavel de referência com null
-    for (ItemCardapio item  : cardapio){ //percoree a lista cardapio
+    ItemCardapio itemSelecionado = cardapio[((int)idSelecionado) -1]; //inicia a váriavel de referência com null
+/*    for (ItemCardapio item  : cardapio){ //percoree a lista cardapio
         if (item.id == idSelecionado){ //verifica se item.id == idSelecionado
             itemSelecionado = item; //itemSelecionado recebe a referência do objeto
         }
-    }
+    }*/
 
     IO.println("ID : " + itemSelecionado.id);
     IO.println("Nome: " + itemSelecionado.nome);

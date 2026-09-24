@@ -2,27 +2,6 @@
 void main() {
 
 
-    //instanciando a classe ItemCardapio com construtor
-    ItemCardapio item1 = new ItemCardapio(50L,"Refresco do Chaves","Suco de limão que parece de tamarindo e tem gosto de groselha",2.99, 4);
-    item1.emPromocao = false;
-
-    var item2 = new ItemCardapio(2L, "Sanduiche de Presunto do Chaves", "Sanduiche de presunto simples, mas feito com muito amor.",3.50, 2);
-    item2.definePromocao(2.99);
-
-    var item3 = new ItemCardapio(3L, "Torta de Frango da Dona Florinda", "Torta de frango com recheio cremoso e massa crocante.", 12.99,2);
-    item3.definePromocao(10.99);
-
-    var item4 = new ItemCardapio(4L, "Pipoca do Quico","Balde de pipoca preparado com carinho pelo quico",4.99,2);
-    item4.definePromocao(3.99);
-
-    var item5 = new ItemCardapio(5L, "Água de Jamaica", "Água aromatizada com hibisco e toque de açúcar.",2.50, 4);
-    item5.definePromocao(2.00);
-
-    var item6 = new ItemCardapio(6L, "Churros do Chaves", "Churros recheados com doce de leite, clássicos e irresistíveis.", 4.99,3);
-    item6.definePromocao(3.99);
-
-    var item7 = new ItemCardapio(7L, "Tacos de Carnitas", "Tacos recheados com carne tenra", 25.90, 2);
-
     /*//Imprimindo os objetos
     System.out.println("id: " + item1.id +"\nnome: " + item1.nome + "\ndescição: " + item1.descricao + "\nestá em promoção: " + item1.emPromocao + "\npreço: " + item1.preco + "\ncategoria: " + item1.obtemNomeCategoria());
     IO.println("*_*".repeat(50));
@@ -51,17 +30,12 @@ void main() {
     //IO.println("Preço com desconto: " + item7.precoComDesconto);
     IO.println("*_*".repeat(50));*/
 
-    ItemCardapio[] cardapio = { item1, item2, item3, item4, item5, item6, item7 }; //criados anteriormente e armazenados em cardapio
+    Cardapio cardapio = new Cardapio();  //criados anteriormente como ItemCardapio[]
 
     String linha = IO.readln("Digite um ID de um item de cardápio: "); //recebe valor
     long idSelecionado = Long.parseLong(linha); //armazena valor na variavel idSelecionado
 
-    ItemCardapio itemSelecionado = cardapio[((int)idSelecionado) -1]; //inicia a váriavel de referência com null
-/*    for (ItemCardapio item  : cardapio){ //percoree a lista cardapio
-        if (item.id == idSelecionado){ //verifica se item.id == idSelecionado
-            itemSelecionado = item; //itemSelecionado recebe a referência do objeto
-        }
-    }*/
+    ItemCardapio itemSelecionado = cardapio.itens[((int)idSelecionado) -1]; //Busca o item diretamente no array de itens dentro do objeto Cardapio
 
     IO.println("ID : " + itemSelecionado.id);
     IO.println("Nome: " + itemSelecionado.nome);
@@ -149,4 +123,40 @@ class ItemCardapio {
 
 
 
+}
+
+class Cardapio {
+    ItemCardapio[] itens; //declarando
+
+    //instanciando a classe ItemCardapio com construtor
+    Cardapio() { //construtor
+        ItemCardapio item1 = new ItemCardapio(50L, "Refresco do Chaves", "Suco de limão que parece de tamarindo e tem gosto de groselha", 2.99, 4);
+        item1.emPromocao = false;
+
+        var item2 = new ItemCardapio(2L, "Sanduiche de Presunto do Chaves", "Sanduiche de presunto simples, mas feito com muito amor.", 3.50, 2);
+        item2.definePromocao(2.99);
+
+        var item3 = new ItemCardapio(3L, "Torta de Frango da Dona Florinda", "Torta de frango com recheio cremoso e massa crocante.", 12.99, 2);
+        item3.definePromocao(10.99);
+
+        var item4 = new ItemCardapio(4L, "Pipoca do Quico", "Balde de pipoca preparado com carinho pelo quico", 4.99, 2);
+        item4.definePromocao(3.99);
+
+        var item5 = new ItemCardapio(5L, "Água de Jamaica", "Água aromatizada com hibisco e toque de açúcar.", 2.50, 4);
+        item5.definePromocao(2.00);
+
+        var item6 = new ItemCardapio(6L, "Churros do Chaves", "Churros recheados com doce de leite, clássicos e irresistíveis.", 4.99, 3);
+        item6.definePromocao(3.99);
+
+        var item7 = new ItemCardapio(7L, "Tacos de Carnitas", "Tacos recheados com carne tenra", 25.90, 2);
+
+    itens = new ItemCardapio[7]; //array de itens
+    itens[0]=item1;
+    itens[1]=item2;
+    itens[2]=item3;
+    itens[3]=item4;
+    itens[4]=item5;
+    itens[5]=item6;
+    itens[6]=item7;
+    }
 }

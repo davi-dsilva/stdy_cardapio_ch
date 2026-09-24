@@ -23,11 +23,15 @@ void main() {
         IO.println("Item não está em promoçao");
     }
 
+    IO.println("_".repeat(100));
+    IO.println("Soma dos Preços: " + cardapio.obtemSomaDosPrecos());
+    IO.println("Total de itens em promoção: " + cardapio.obtemTotalDeItensEmPromoção());
+
     double precoLimite = 10.0;
     IO.println("O primeiro preço que é maior que " + precoLimite + ": " + cardapio.obtemPrimeiroPrecoMaiorQueLimite(precoLimite));
 
     //Todos os preços menos que o Limite
-    IO.println("*".repeat(100));
+    IO.println("_".repeat(100));
     for (ItemCardapio item : cardapio.itens) {
         if (item.preco <= precoLimite) {
             IO.println("Preço menor que " + precoLimite + ": " + item.preco);

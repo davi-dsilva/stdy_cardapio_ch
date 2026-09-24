@@ -37,7 +37,12 @@ void main() {
 
     ItemCardapio itemSelecionado = cardapio.itens[((int)idSelecionado) -1]; //Busca o item diretamente no array de itens dentro do objeto Cardapio
 
+    IO.println("Soma dos Precos: " + cardapio.obtemSomaDosPrecos()); //criado novo método
+    IO.println("Total de itens em promoção: " + cardapio.obtemTotalDeItensEmPromoção()); //criado novo método
+
     IO.println("ID : " + itemSelecionado.id);
+
+
     IO.println("Nome: " + itemSelecionado.nome);
     IO.println("Categoria: " + itemSelecionado.obtemNomeCategoria());
     IO.println("Descrição: " + itemSelecionado.descricao);
@@ -158,5 +163,26 @@ class Cardapio {
     itens[4]=item5;
     itens[5]=item6;
     itens[6]=item7;
+    }
+
+    double obtemSomaDosPrecos(){
+        double totalDePrecos = 0.0;
+        int i = 0;
+        while (i < itens.length) {
+            double preco = itens[i].preco;
+            totalDePrecos = totalDePrecos + preco;
+            i ++;
+        }
+        return totalDePrecos;
+    }
+
+    int obtemTotalDeItensEmPromoção(){ //substitui por um for-each
+        int totalItensEmPromocao = 0;
+        for (ItemCardapio item :itens){
+            if (item.emPromocao) {
+                totalItensEmPromocao++;
+            }
+        }
+        return totalItensEmPromocao;
     }
 }

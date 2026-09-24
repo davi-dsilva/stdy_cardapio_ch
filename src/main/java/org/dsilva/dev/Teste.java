@@ -53,13 +53,13 @@ void main() {
 
     ItemCardapio[] cardapio = { item1, item2, item3, item4, item5, item6, item7 }; //criados anteriormente e armazenados em cardapio
 
-    String linha = IO.readln("Digite um ID de um item de cardápio: ");
-    long idSelecionado = Long.parseLong(linha);
+    String linha = IO.readln("Digite um ID de um item de cardápio: "); //recebe valor
+    long idSelecionado = Long.parseLong(linha); //armazena valor na variavel idSelecionado
 
-    ItemCardapio itemSelecionado = null;
-    for (ItemCardapio item  : cardapio){
-        if (item.id == idSelecionado){
-            itemSelecionado = item;
+    ItemCardapio itemSelecionado = null; //inicia a váriavel de referência com null
+    for (ItemCardapio item  : cardapio){ //percoree a lista cardapio
+        if (item.id == idSelecionado){ //verifica se item.id == idSelecionado
+            itemSelecionado = item; //itemSelecionado recebe a referência do objeto
         }
     }
 

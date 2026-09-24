@@ -59,20 +59,26 @@ void main() {
         IO.print("Preco: " + itemSelecionado.preco);
         IO.println("Item não está em promoçao");
     }
+    //Todos os preços menos que o Limite
+    IO.println("*".repeat(100));
+    for (ItemCardapio item : cardapio.itens) {
+        if (item.preco <= precoLimite) {
+            IO.println("Preço menor que " + precoLimite + ": " + item.preco);
+            continue;
+        }
+        IO.println("Processamento pesado para: " + item.preco); //só processar para valores maiores que 10
+
+    }
 
 
-        IO.println("*".repeat(50) + "Laços de Repetição" + "*".repeat(50));
-    System.out.println("for");
-
-
-/*    double [] precos = new double[7];
+    double [] precos = new double[7];
     precos[0] = 2.99 ;
     precos[1] = 3.50;
     precos[2] = 12.99;
     precos[3] = 4.99;
     precos[4] = 2.50;
     precos[5] = 4.99;
-    precos[6] = 25.90;*/
+    precos[6] = 25.90;
 
     boolean [] emPromocao = { true, true, false, true , true, false, false};
 /*
@@ -107,10 +113,10 @@ class ItemCardapio {
     boolean emPromocao;
     double preco;
     double precoComDesconto;
-    int categoria;
+    CategoriaCardapio categoria;
 
     // construtor - serve para definir como o objeto irá ser criado
-    ItemCardapio(long id, String nome, String descricao, double preco, int categoria){
+    ItemCardapio(long id, String nome, String descricao, double preco, CategoriaCardapio categoria){
         //parametros = objeto;
         this.id = id;
         this.nome = nome;
@@ -123,17 +129,8 @@ class ItemCardapio {
         return (preco - precoComDesconto) / preco * 100;
     }
 
-    String obtemNomeCategoria() {
-
-        String nomeCategoria = switch (categoria) {
-            case 1 -> "Entradas";
-            case 2 -> "Pratos Principais";
-            case 3 -> "Sobremesas";
-            case 4 -> "Bebidas";
-            default -> "Não foi encontrada uma Categoria";
-        };
-        IO.println("-".repeat(50));
-        return nomeCategoria;
+    CategoriaCardapio obtemNomeCategoria() {
+        return categoria;
     }
 
     void definePromocao (double precoComDesconto){ //método void se estiver emPromocao == true e define o valor da promocao
@@ -156,25 +153,25 @@ class Cardapio {
 
     //instanciando a classe ItemCardapio com construtor
     Cardapio() { //construtor
-        ItemCardapio item1 = new ItemCardapio(50L, "Refresco do Chaves", "Suco de limão que parece de tamarindo e tem gosto de groselha", 2.99, 4);
+        ItemCardapio item1 = new ItemCardapio(50L, "Refresco do Chaves", "Suco de limão que parece de tamarindo e tem gosto de groselha", 2.99, CategoriaCardapio.BEBIDAS);
         item1.emPromocao = false;
 
-        var item2 = new ItemCardapio(2L, "Sanduiche de Presunto do Chaves", "Sanduiche de presunto simples, mas feito com muito amor.", 3.50, 2);
+        var item2 = new ItemCardapio(2L, "Sanduiche de Presunto do Chaves", "Sanduiche de presunto simples, mas feito com muito amor.", 3.50, CategoriaCardapio.PRATOS_PRINCIPAIS);
         item2.definePromocao(2.99);
 
-        var item3 = new ItemCardapio(3L, "Torta de Frango da Dona Florinda", "Torta de frango com recheio cremoso e massa crocante.", 12.99, 2);
+        var item3 = new ItemCardapio(3L, "Torta de Frango da Dona Florinda", "Torta de frango com recheio cremoso e massa crocante.", 12.99, CategoriaCardapio.PRATOS_PRINCIPAIS);
         item3.definePromocao(10.99);
 
-        var item4 = new ItemCardapio(4L, "Pipoca do Quico", "Balde de pipoca preparado com carinho pelo quico", 4.99, 2);
+        var item4 = new ItemCardapio(4L, "Pipoca do Quico", "Balde de pipoca preparado com carinho pelo quico", 4.99, CategoriaCardapio.PRATOS_PRINCIPAIS);
         item4.definePromocao(3.99);
 
-        var item5 = new ItemCardapio(5L, "Água de Jamaica", "Água aromatizada com hibisco e toque de açúcar.", 2.50, 4);
+        var item5 = new ItemCardapio(5L, "Água de Jamaica", "Água aromatizada com hibisco e toque de açúcar.", 2.50, CategoriaCardapio.BEBIDAS);
         item5.definePromocao(2.00);
 
-        var item6 = new ItemCardapio(6L, "Churros do Chaves", "Churros recheados com doce de leite, clássicos e irresistíveis.", 4.99, 3);
+        var item6 = new ItemCardapio(6L, "Churros do Chaves", "Churros recheados com doce de leite, clássicos e irresistíveis.", 4.99, CategoriaCardapio.SOBREMESAS);
         item6.definePromocao(3.99);
 
-        var item7 = new ItemCardapio(7L, "Tacos de Carnitas", "Tacos recheados com carne tenra", 25.90, 2);
+        var item7 = new ItemCardapio(7L, "Tacos de Carnitas", "Tacos recheados com carne tenra", 25.90, CategoriaCardapio.PRATOS_PRINCIPAIS);
 
     itens = new ItemCardapio[7]; //array de itens
     itens[0]=item1;
@@ -221,4 +218,8 @@ class Cardapio {
         }
         return precoMaiorQueLimite;
     }
+}
+
+enum CategoriaCardapio {
+    ENTRADA, PRATOS_PRINCIPAIS, SOBREMESAS, BEBIDAS
 }

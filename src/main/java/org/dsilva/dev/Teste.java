@@ -14,7 +14,7 @@ void main() {
     IO.println("Descrição: " + itemSelecionado.descricao);
 
     if (itemSelecionado.emPromocao) {
-            IO.println("Item em Promoção! \uD83E\uDD11");
+        IO.println("Item em Promoção! \uD83E\uDD11");
         var porcentagemDesconto = itemSelecionado.calculaPorcentagemDesconto();
         IO.println("Preco: de " + itemSelecionado.preco + " por " + itemSelecionado.precoComDesconto);
         System.out.println("Porcentagem de Desconto: " + porcentagemDesconto);
@@ -73,14 +73,6 @@ class ItemCardapio {
         emPromocao = true;
         this.precoComDesconto = precoComDesconto;
     }
-    //Pense no objeto como uma ficha cadastral:
-    //
-    //Um método com return é como um funcionário que vai até a ficha, lê uma informação e grita a resposta para você ("O preço é 3.50!").
-    //
-    //Um método void é como um funcionário que vai até a ficha com uma caneta, apaga o valor antigo e escreve o novo valor lá dentro.
-    // Ele não grita nada para você (não tem return), mas a alteração física foi feita na ficha do item2.
-
-
 }
 
 class Cardapio {

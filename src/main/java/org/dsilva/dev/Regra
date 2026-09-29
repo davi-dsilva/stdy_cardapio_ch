@@ -1,0 +1,10 @@
+Imposto é 10% para a maioria dos produtos
+mas existem Produtos que são isentos (não tem imposto)
+é calculado em cima do preco efetico, ou seja preco com desconto
+
+valor do imposto é -> a taxa * preco efetivo
+
+Isentos:
+Pipoca
+churros
+Tacos

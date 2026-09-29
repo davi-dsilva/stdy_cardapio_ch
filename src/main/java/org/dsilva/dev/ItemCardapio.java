@@ -34,4 +34,15 @@ public class ItemCardapio {
         emPromocao = true;
         this.precoComDesconto = precoComDesconto;
     }
+
+    public double calculaImposto() {
+        double imposto;
+        if (this.emPromocao){
+            imposto = precoComDesconto * 0.1;
+        }else {
+            imposto = preco * 0.1;
+        }
+        return imposto;
+    }
+
 }

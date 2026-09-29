@@ -1,17 +1,42 @@
-package org.dsilva.dev;
+import org.dsilva.dev.Cardapio;
+import org.dsilva.dev.ItemCardapio;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+void main() {
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+    Cardapio cardapio = new Cardapio();  //criados anteriormente como ItemCardapio[]
+
+    String linha = IO.readln("Digite um ID de um item de cardápio: "); //recebe valor
+    long idSelecionado = Long.parseLong(linha); //armazena valor na variavel idSelecionado
+
+    ItemCardapio itemSelecionado = cardapio.itens[((int) idSelecionado) - 1]; //Busca o item diretamente no array de itens dentro do objeto Cardapio
+
+    IO.println("ID : " + itemSelecionado.id);
+    IO.println("Nome: " + itemSelecionado.nome);
+    IO.println("Categoria: " + itemSelecionado.obtemNomeCategoria());
+    IO.println("Descrição: " + itemSelecionado.descricao);
+
+    if (itemSelecionado.emPromocao) {
+        IO.println("Item em Promoção! \uD83E\uDD11");
+        var porcentagemDesconto = itemSelecionado.calculaPorcentagemDesconto();
+        IO.println("Preco: de " + itemSelecionado.preco + " por " + itemSelecionado.precoComDesconto);
+        System.out.println("Porcentagem de Desconto: " + porcentagemDesconto);
+    } else {
+        IO.print("Preco: " + itemSelecionado.preco);
+        IO.println("Item não está em promoçao");
+    }
+
+    IO.println("_".repeat(100));
+    IO.println("Soma dos Preços: " + cardapio.obtemSomaDosPrecos());
+    IO.println("Total de itens em promoção: " + cardapio.obtemTotalDeItensEmPromoção());
+
+    double precoLimite = 10.0;
+    IO.println("O primeiro preço que é maior que " + precoLimite + ": " + cardapio.obtemPrimeiroPrecoMaiorQueLimite(precoLimite));
+
+    //Todos os preços menos que o Limite
+    IO.println("_".repeat(100));
+    for (ItemCardapio item : cardapio.itens) {
+        if (item.preco <= precoLimite) {
+            IO.println("Preço menor que " + precoLimite + ": " + item.preco);
         }
     }
 }

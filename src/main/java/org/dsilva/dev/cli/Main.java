@@ -1,5 +1,7 @@
-import org.dsilva.dev.Cardapio;
-import org.dsilva.dev.ItemCardapio;
+
+import org.dsilva.dev.modelo.Cardapio;
+import org.dsilva.dev.modelo.ItemCardapio;
+
 
 void main() {
 

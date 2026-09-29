@@ -1,4 +1,4 @@
-package org.dsilva.dev;
+package org.dsilva.dev.modelo;
 
 public class ItemCardapio {
     //  Aulas Sobre POO sintaxe de Classes

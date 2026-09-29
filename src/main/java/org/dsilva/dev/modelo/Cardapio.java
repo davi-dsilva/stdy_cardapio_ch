@@ -1,4 +1,4 @@
-package org.dsilva.dev;
+package org.dsilva.dev.modelo;
 public class Cardapio {
     public ItemCardapio[] itens; //declarando
 

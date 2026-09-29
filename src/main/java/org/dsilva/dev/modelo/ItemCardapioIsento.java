@@ -1,4 +1,4 @@
-package org.dsilva.dev;
+package org.dsilva.dev.modelo;
 
 class ItemCardapioIsento extends ItemCardapio {
 

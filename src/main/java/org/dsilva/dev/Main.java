@@ -24,6 +24,7 @@ void main() {
         IO.print("Preco: " + itemSelecionado.preco);
         IO.println("Item não está em promoçao");
     }
+    IO.println("Imposto: " + itemSelecionado.calculaImposto());
 
     IO.println("_".repeat(100));
     IO.println("Soma dos Preços: " + cardapio.obtemSomaDosPrecos());

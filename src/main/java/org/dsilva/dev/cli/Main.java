@@ -8,23 +8,23 @@ void main() {
     String linha = IO.readln("Digite um ID de um item de cardápio: "); //recebe valor
     long idSelecionado = Long.parseLong(linha); //armazena valor na variavel idSelecionado
 
-    ItemCardapio itemSelecionado = cardapio.obtemItemPorId(idSelecionado); //Busca o item diretamente no array de itens dentro do objeto Cardapio
+    ItemCardapio itemSelecionado = cardapio.getItemPorId(idSelecionado); //Busca o item diretamente no array de itens dentro do objeto Cardapio
 
-    IO.println("ID : " + itemSelecionado.id);
-    IO.println("Nome: " + itemSelecionado.nome);
-    IO.println("Categoria: " + itemSelecionado.obtemNomeCategoria());
-    IO.println("Descrição: " + itemSelecionado.descricao);
+    IO.println("ID : " + itemSelecionado.getId());
+    IO.println("Nome: " + itemSelecionado.getNome());
+    IO.println("Categoria: " + itemSelecionado.getCategoria());
+    IO.println("Descrição: " + itemSelecionado.getDescricao());
 
-    if (itemSelecionado.emPromocao) {
+    if (itemSelecionado.isEmPromocao()) {
         IO.println("Item em Promoção! \uD83E\uDD11");
-        var porcentagemDesconto = itemSelecionado.calculaPorcentagemDesconto();
-        IO.println("Preco: de " + itemSelecionado.preco + " por " + itemSelecionado.precoComDesconto);
+        var porcentagemDesconto = itemSelecionado.getPorcentagemDesconto();
+        IO.println("Preco: de " + itemSelecionado.getPreco() + " por " + itemSelecionado.getPrecoComDesconto());
         System.out.println("Porcentagem de Desconto: " + porcentagemDesconto);
     } else {
-        IO.print("Preco: " + itemSelecionado.preco);
+        IO.print("Preco: " + itemSelecionado.getPreco());
         IO.println("Item não está em promoçao");
     }
-    IO.println("Imposto: " + itemSelecionado.getCalculaImposto());
+    IO.println("Imposto: " + itemSelecionado.getImposto());
 
     IO.println("_".repeat(100));
     IO.println("Soma dos Preços: " + cardapio.getSomaDosPrecos());
@@ -35,9 +35,9 @@ void main() {
 
     //Todos os preços menos que o Limite
     IO.println("_".repeat(100));
-    for (ItemCardapio item : cardapio.obtemItens()) {
-        if (item.preco <= precoLimite) {
-            IO.println("Preço menor que " + precoLimite + ": " + item.preco);
+    for (ItemCardapio item : cardapio.getItens()) {
+        if (item.getPreco() <= precoLimite) {
+            IO.println("Preço menor que " + precoLimite + ": " + item.getPreco());
         }
     }
 }

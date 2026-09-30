@@ -3,12 +3,12 @@ package org.dsilva.dev.modelo;
 public class ItemCardapio {
     //  Aulas Sobre POO sintaxe de Classes
     //atributos da classe
-    public long id;
-    public String nome;
-    public String descricao;
-    public boolean emPromocao;
-    public double preco;
-    public double precoComDesconto;
+    private long id;
+    private String nome;
+    private String descricao;
+    private boolean getPromocao;
+    private double preco;
+    private double precoComDesconto;
     CategoriaCardapio categoria;
 
     // construtor - serve para definir como o objeto irá ser criado
@@ -22,27 +22,82 @@ public class ItemCardapio {
     }
 
     //Métodos
-    public double calculaPorcentagemDesconto() {
+    public double getPorcentagemDesconto() {
         return (preco - precoComDesconto) / preco * 100;
     }
 
-    public CategoriaCardapio obtemNomeCategoria() {
+    public CategoriaCardapio getNomeCategoria() {
         return categoria;
     }
 
     public void setPromocao(double precoComDesconto) { //método void se estiver emPromocao == true e define o valor da promocao
-        emPromocao = true;
+        getPromocao = true;
         this.precoComDesconto = precoComDesconto;
     }
 
-    public double getCalculaImposto() {
+    public double getImposto() {
         double imposto;
-        if (this.emPromocao){
-            imposto = precoComDesconto * 0.1;
+        if (this.getPromocao){
+            imposto = getPrecoComDesconto() * 0.1;
         }else {
-            imposto = preco * 0.1;
+            imposto = getPreco() * 0.1;
         }
         return imposto;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public boolean isEmPromocao() {
+        return getPromocao;
+    }
+
+    public void setEmPromocao(boolean emPromocao) {
+        this.getPromocao = emPromocao;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public double getPrecoComDesconto() {
+        return precoComDesconto;
+    }
+
+    public void setPrecoComDesconto(double precoComDesconto) {
+        this.precoComDesconto = precoComDesconto;
+    }
+
+    public CategoriaCardapio getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(CategoriaCardapio categoria) {
+        this.categoria = categoria;
+    }
 }

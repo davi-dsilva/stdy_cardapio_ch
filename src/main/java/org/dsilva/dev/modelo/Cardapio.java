@@ -6,7 +6,6 @@ public class Cardapio {
     //instanciando a classe ItemCardapio com construtor
     public Cardapio() { //construtor
         ItemCardapio item1 = new ItemCardapio(50L, "Refresco do Chaves", "Suco de limão que parece de tamarindo e tem gosto de groselha", 2.99, CategoriaCardapio.BEBIDAS);
-        item1.emPromocao = false;
 
         ItemCardapio item2 = new ItemCardapio(2L, "Sanduiche de Presunto do Chaves", "Sanduiche de presunto simples, mas feito com muito amor.", 3.50, CategoriaCardapio.PRATOS_PRINCIPAIS);
         item2.setPromocao(2.99);
@@ -26,20 +25,20 @@ public class Cardapio {
         ItemCardapio item7 = new ItemCardapioIsento(7L, "Tacos de Carnitas", "Tacos recheados com carne tenra", 25.90, CategoriaCardapio.PRATOS_PRINCIPAIS);
 
         itens = new ItemCardapio[7]; //array de itens
-        itens[0] = item1;
-        itens[1] = item2;
-        itens[2] = item3;
-        itens[3] = item4;
-        itens[4] = item5;
-        itens[5] = item6;
-        itens[6] = item7;
+        getItens()[0] = item1;
+        getItens()[1] = item2;
+        getItens()[2] = item3;
+        getItens()[3] = item4;
+        getItens()[4] = item5;
+        getItens()[5] = item6;
+        getItens()[6] = item7;
     }
 
     public double getSomaDosPrecos() {
         double totalDePrecos = 0.0;
         int i = 0;
-        while (i < itens.length) {
-            double preco = itens[i].preco;
+        while (i < getItens().length) {
+            double preco = getItens()[i].getPreco();
             totalDePrecos = totalDePrecos + preco;
             i++;
         }
@@ -48,8 +47,8 @@ public class Cardapio {
 
     public int getTotalDeItensEmPromoção() { //substitui por um for-each
         int totalItensEmPromocao = 0;
-        for (ItemCardapio item : itens) {
-            if (item.emPromocao) {
+        for (ItemCardapio item : getItens()) {
+            if (item.isEmPromocao()) {
                 totalItensEmPromocao++;
             }
         }
@@ -61,20 +60,20 @@ public class Cardapio {
     public double getPrimeiroPrecoMaiorQueLimite(double precoLimite) {
 
         double precoMaiorQueLimite = -1.0;
-        for (ItemCardapio item : itens) {
-            if (item.preco > precoLimite) {
-                precoMaiorQueLimite = item.preco;
+        for (ItemCardapio item : getItens()) {
+            if (item.getPreco() > precoLimite) {
+                precoMaiorQueLimite = item.getPreco();
                 break;
             }
 
         }
         return precoMaiorQueLimite;
     }
-    public ItemCardapio obtemItemPorId(long idSelecionado) {
+    public ItemCardapio getItemPorId(long idSelecionado) {
         return itens[((int) idSelecionado) - 1];
     }
 
-    public ItemCardapio[] obtemItens() {
+    public ItemCardapio[] getItens() {
         return itens;
     }
 }

@@ -9,7 +9,7 @@ public class ItemCardapio {
     private boolean emPromocao;
     private double preco;
     private double precoComDesconto;
-    CategoriaCardapio categoria;
+    private CategoriaCardapio categoria;
 
     // construtor - serve para definir como o objeto irá ser criado
     public ItemCardapio(long id, String nome, String descricao, double preco, CategoriaCardapio categoria) {

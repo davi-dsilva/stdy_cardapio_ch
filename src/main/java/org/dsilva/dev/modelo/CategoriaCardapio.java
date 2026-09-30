@@ -1,5 +1,5 @@
 package org.dsilva.dev.modelo;
 
-enum CategoriaCardapio {
+public enum CategoriaCardapio {
     ENTRADA, PRATOS_PRINCIPAIS, SOBREMESAS, BEBIDAS
 }

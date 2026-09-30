@@ -8,7 +8,7 @@ void main() {
     String linha = IO.readln("Digite um ID de um item de cardápio: "); //recebe valor
     long idSelecionado = Long.parseLong(linha); //armazena valor na variavel idSelecionado
 
-    ItemCardapio itemSelecionado = cardapio.itens[((int) idSelecionado) - 1]; //Busca o item diretamente no array de itens dentro do objeto Cardapio
+    ItemCardapio itemSelecionado = cardapio.obtemItemPorId(idSelecionado); //Busca o item diretamente no array de itens dentro do objeto Cardapio
 
     IO.println("ID : " + itemSelecionado.id);
     IO.println("Nome: " + itemSelecionado.nome);
@@ -35,7 +35,7 @@ void main() {
 
     //Todos os preços menos que o Limite
     IO.println("_".repeat(100));
-    for (ItemCardapio item : cardapio.itens) {
+    for (ItemCardapio item : cardapio.obtemItens()) {
         if (item.preco <= precoLimite) {
             IO.println("Preço menor que " + precoLimite + ": " + item.preco);
         }

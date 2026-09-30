@@ -6,7 +6,7 @@ public class ItemCardapio {
     private long id;
     private String nome;
     private String descricao;
-    private boolean getPromocao;
+    private boolean emPromocao;
     private double preco;
     private double precoComDesconto;
     CategoriaCardapio categoria;
@@ -23,17 +23,18 @@ public class ItemCardapio {
 
     //Métodos
     public double getPorcentagemDesconto() {
+
         return (preco - precoComDesconto) / preco * 100;
     }
 
     public void setPromocao(double precoComDesconto) { //método void se estiver emPromocao == true e define o valor da promocao
-        getPromocao = true;
+        this.emPromocao = true;
         this.precoComDesconto = precoComDesconto;
     }
 
     public double getImposto() {
         double imposto;
-        if (this.getPromocao){
+        if (this.isEmPromocao()){
             imposto = getPrecoComDesconto() * 0.1;
         }else {
             imposto = getPreco() * 0.1;
@@ -66,11 +67,11 @@ public class ItemCardapio {
     }
 
     public boolean isEmPromocao() {
-        return getPromocao;
+        return emPromocao;
     }
 
     public void setEmPromocao(boolean emPromocao) {
-        this.getPromocao = emPromocao;
+        this.emPromocao = emPromocao;
     }
 
     public double getPreco() {

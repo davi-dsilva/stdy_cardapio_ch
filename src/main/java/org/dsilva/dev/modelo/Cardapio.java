@@ -45,7 +45,7 @@ public class Cardapio {
         return totalDePrecos;
     }
 
-    public int getTotalDeItensEmPromoção() { //substitui por um for-each
+    public int getTotalDeItensEmPromocao() { //substitui por um for-each
         int totalItensEmPromocao = 0;
         for (ItemCardapio item : getItens()) {
             if (item.isEmPromocao()) {

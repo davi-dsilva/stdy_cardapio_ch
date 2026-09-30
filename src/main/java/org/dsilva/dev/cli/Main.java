@@ -28,7 +28,7 @@ void main() {
 
     IO.println("_".repeat(100));
     IO.println("Soma dos Preços: " + cardapio.getSomaDosPrecos());
-    IO.println("Total de itens em promoção: " + cardapio.getTotalDeItensEmPromoção());
+    IO.println("Total de itens em promoção: " + cardapio.getTotalDeItensEmPromocao());
 
     double precoLimite = 10.0;
     IO.println("O primeiro preço que é maior que " + precoLimite + ": " + cardapio.getPrimeiroPrecoMaiorQueLimite(precoLimite));

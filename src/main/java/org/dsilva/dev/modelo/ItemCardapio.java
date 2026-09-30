@@ -26,10 +26,6 @@ public class ItemCardapio {
         return (preco - precoComDesconto) / preco * 100;
     }
 
-    public CategoriaCardapio getNomeCategoria() {
-        return categoria;
-    }
-
     public void setPromocao(double precoComDesconto) { //método void se estiver emPromocao == true e define o valor da promocao
         getPromocao = true;
         this.precoComDesconto = precoComDesconto;

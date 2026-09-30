@@ -30,7 +30,7 @@ public class ItemCardapio {
         return categoria;
     }
 
-    public void definePromocao(double precoComDesconto) { //método void se estiver emPromocao == true e define o valor da promocao
+    public void setPromocao(double precoComDesconto) { //método void se estiver emPromocao == true e define o valor da promocao
         emPromocao = true;
         this.precoComDesconto = precoComDesconto;
     }

@@ -8,19 +8,19 @@ public class Cardapio {
         item1.emPromocao = false;
 
         ItemCardapio item2 = new ItemCardapio(2L, "Sanduiche de Presunto do Chaves", "Sanduiche de presunto simples, mas feito com muito amor.", 3.50, CategoriaCardapio.PRATOS_PRINCIPAIS);
-        item2.definePromocao(2.99);
+        item2.setPromocao(2.99);
 
         ItemCardapio item3 = new ItemCardapio(3L, "Torta de Frango da Dona Florinda", "Torta de frango com recheio cremoso e massa crocante.", 12.99, CategoriaCardapio.PRATOS_PRINCIPAIS);
-        item3.definePromocao(10.99);
+        item3.setPromocao(10.99);
 
         ItemCardapio item4 = new ItemCardapioIsento(4L, "Pipoca do Quico", "Balde de pipoca preparado com carinho pelo quico", 4.99, CategoriaCardapio.PRATOS_PRINCIPAIS);
-        item4.definePromocao(3.99);
+        item4.setPromocao(3.99);
 
         ItemCardapio item5 = new ItemCardapio(5L, "Água de Jamaica", "Água aromatizada com hibisco e toque de açúcar.", 2.50, CategoriaCardapio.BEBIDAS);
-        item5.definePromocao(2.00);
+        item5.setPromocao(2.00);
 
         ItemCardapio item6 = new ItemCardapioIsento(6L, "Churros do Chaves", "Churros recheados com doce de leite, clássicos e irresistíveis.", 4.99, CategoriaCardapio.SOBREMESAS);
-        item6.definePromocao(3.99);
+        item6.setPromocao(3.99);
 
         ItemCardapio item7 = new ItemCardapioIsento(7L, "Tacos de Carnitas", "Tacos recheados com carne tenra", 25.90, CategoriaCardapio.PRATOS_PRINCIPAIS);
 

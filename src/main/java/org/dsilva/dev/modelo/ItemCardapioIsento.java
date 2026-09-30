@@ -1,6 +1,6 @@
 package org.dsilva.dev.modelo;
 
-class ItemCardapioIsento extends ItemCardapio {
+public class ItemCardapioIsento extends ItemCardapio {
     //construtor
     ItemCardapioIsento(long id, String nome, String descricao, double preco, CategoriaCardapio categoria) {
         super(id, nome, descricao, preco, categoria );

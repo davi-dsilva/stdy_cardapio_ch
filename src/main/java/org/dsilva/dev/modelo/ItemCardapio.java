@@ -12,7 +12,7 @@ public class ItemCardapio {
     CategoriaCardapio categoria;
 
     // construtor - serve para definir como o objeto irá ser criado
-    ItemCardapio(long id, String nome, String descricao, double preco, CategoriaCardapio categoria) {
+    public ItemCardapio(long id, String nome, String descricao, double preco, CategoriaCardapio categoria) {
         //parametros = objeto;
         this.id = id;
         this.nome = nome;

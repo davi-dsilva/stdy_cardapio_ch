@@ -8,7 +8,7 @@ class ItemCardapioIsento extends ItemCardapio {
 
     //Override de método (reescrita do método)
     @Override //anotação de OVerride é opcional, mas uma boa prática em java
-    public double calculaImposto(){
+    public double getCalculaImposto(){
 
         return 0.0;
     }

@@ -34,7 +34,7 @@ public class Cardapio {
         itens[6] = item7;
     }
 
-    public double obtemSomaDosPrecos() {
+    public double getSomaDosPrecos() {
         double totalDePrecos = 0.0;
         int i = 0;
         while (i < itens.length) {
@@ -45,7 +45,7 @@ public class Cardapio {
         return totalDePrecos;
     }
 
-    public int obtemTotalDeItensEmPromoção() { //substitui por um for-each
+    public int getTotalDeItensEmPromoção() { //substitui por um for-each
         int totalItensEmPromocao = 0;
         for (ItemCardapio item : itens) {
             if (item.emPromocao) {
@@ -57,7 +57,7 @@ public class Cardapio {
 
 
     // Achar o primeiro preco que é maior que 10
-    public double obtemPrimeiroPrecoMaiorQueLimite(double precoLimite) {
+    public double getPrimeiroPrecoMaiorQueLimite(double precoLimite) {
 
         double precoMaiorQueLimite = -1.0;
         for (ItemCardapio item : itens) {

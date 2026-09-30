@@ -35,7 +35,7 @@ public class ItemCardapio {
         this.precoComDesconto = precoComDesconto;
     }
 
-    public double calculaImposto() {
+    public double getCalculaImposto() {
         double imposto;
         if (this.emPromocao){
             imposto = precoComDesconto * 0.1;

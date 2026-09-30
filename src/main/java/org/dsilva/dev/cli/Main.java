@@ -26,14 +26,14 @@ void main() {
         IO.print("Preco: " + itemSelecionado.preco);
         IO.println("Item não está em promoçao");
     }
-    IO.println("Imposto: " + itemSelecionado.calculaImposto());
+    IO.println("Imposto: " + itemSelecionado.getCalculaImposto());
 
     IO.println("_".repeat(100));
-    IO.println("Soma dos Preços: " + cardapio.obtemSomaDosPrecos());
-    IO.println("Total de itens em promoção: " + cardapio.obtemTotalDeItensEmPromoção());
+    IO.println("Soma dos Preços: " + cardapio.getSomaDosPrecos());
+    IO.println("Total de itens em promoção: " + cardapio.getTotalDeItensEmPromoção());
 
     double precoLimite = 10.0;
-    IO.println("O primeiro preço que é maior que " + precoLimite + ": " + cardapio.obtemPrimeiroPrecoMaiorQueLimite(precoLimite));
+    IO.println("O primeiro preço que é maior que " + precoLimite + ": " + cardapio.getPrimeiroPrecoMaiorQueLimite(precoLimite));
 
     //Todos os preços menos que o Limite
     IO.println("_".repeat(100));

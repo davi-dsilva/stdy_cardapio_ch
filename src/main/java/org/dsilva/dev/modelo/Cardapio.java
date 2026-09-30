@@ -1,6 +1,7 @@
 package org.dsilva.dev.modelo;
 public class Cardapio {
-    public ItemCardapio[] itens; //declarando
+
+    private ItemCardapio[] itens; //private só pode ser acessado dentro da mesma classe
 
     //instanciando a classe ItemCardapio com construtor
     public Cardapio() { //construtor
@@ -68,5 +69,12 @@ public class Cardapio {
 
         }
         return precoMaiorQueLimite;
+    }
+    public ItemCardapio obtemItemPorId(long idSelecionado) {
+        return itens[((int) idSelecionado) - 1];
+    }
+
+    public ItemCardapio[] obtemItens() {
+        return itens;
     }
 }

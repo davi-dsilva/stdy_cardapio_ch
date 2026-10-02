@@ -1,7 +1,7 @@
 
 
 void main() {
-    String teste = new String();
+    String teste;
 
     teste = "Testando métodos da Classe STRING ";
 

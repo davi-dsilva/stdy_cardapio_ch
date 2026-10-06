@@ -1,39 +1,25 @@
 package org.dsilva.dev.modelo;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
+
 public class Cardapio {
-
-    private ItemCardapio[] itens; //private só pode ser acessado dentro da mesma classe
-
+    private final ItemCardapio[] itens; //private só pode ser acessado dentro da mesma classe
     //instanciando a classe ItemCardapio com construtor
-    public Cardapio(String nomeArquivo) {
-    IO.println("Arquivo: " + nomeArquivo);
-        //construtor
-        ItemCardapio item1 = new ItemCardapio(50L, "Refresco do Chaves", "Suco de limão que parece de tamarindo e tem gosto de groselha", 2.99, CategoriaCardapio.BEBIDAS);
 
-        ItemCardapio item2 = new ItemCardapio(2L, "Sanduiche de Presunto do Chaves", "Sanduiche de presunto simples, mas feito com muito amor.", 3.50, CategoriaCardapio.PRATOS_PRINCIPAIS);
-        item2.setPromocao(2.99);
+    public Cardapio(String nomeArquivo) throws IOException {
+    Path arquivo = Paths.get(nomeArquivo);
+    String conteudoArquivo = Files.readString(arquivo);
+    IO.println(conteudoArquivo);
 
-        ItemCardapio item3 = new ItemCardapio(3L, "Torta de Frango da Dona Florinda", "Torta de frango com recheio cremoso e massa crocante.", 12.99, CategoriaCardapio.PRATOS_PRINCIPAIS);
-        item3.setPromocao(10.99);
+    ItemCardapio iten1 = new ItemCardapio(1L,"item1","item1",2.3,CategoriaCardapio.BEBIDAS);
 
-        ItemCardapio item4 = new ItemCardapioIsento(4L, "Pipoca do Quico", "Balde de pipoca preparado com carinho pelo quico", 4.99, CategoriaCardapio.PRATOS_PRINCIPAIS);
-        item4.setPromocao(3.99);
+        itens = new ItemCardapio[1];
+        getItens()[0] = iten1;
 
-        ItemCardapio item5 = new ItemCardapio(5L, "Água de Jamaica", "Água aromatizada com hibisco e toque de açúcar.", 2.50, CategoriaCardapio.BEBIDAS);
-        item5.setPromocao(2.00);
-
-        ItemCardapio item6 = new ItemCardapioIsento(6L, "Churros do Chaves", "Churros recheados com doce de leite, clássicos e irresistíveis.", 4.99, CategoriaCardapio.SOBREMESAS);
-        item6.setPromocao(3.99);
-
-        ItemCardapio item7 = new ItemCardapioIsento(7L, "Tacos de Carnitas", "Tacos recheados com carne tenra", 25.90, CategoriaCardapio.PRATOS_PRINCIPAIS);
-
-        itens = new ItemCardapio[7]; //array de itens
-        getItens()[0] = item1;
-        getItens()[1] = item2;
-        getItens()[2] = item3;
-        getItens()[3] = item4;
-        getItens()[4] = item5;
-        getItens()[5] = item6;
-        getItens()[6] = item7;
     }
 
     public double getSomaDosPrecos() {
@@ -67,6 +53,8 @@ public class Cardapio {
                 precoMaiorQueLimite = item.getPreco();
                 break;
             }
+
+
 
         }
         return precoMaiorQueLimite;

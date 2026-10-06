@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Main {
     void main() throws IOException {
 
-    String nomeArquivo = IO.readln("Digite o nome do Arquvi: ");
+    String nomeArquivo = "itens-cardapio.csv";
     Cardapio cardapio = new Cardapio(nomeArquivo);  //criados anteriormente como ItemCardapio[]
 
     String linha = IO.readln("Digite um ID de um item de cardápio: "); //recebe valor

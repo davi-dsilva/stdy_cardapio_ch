@@ -13,7 +13,9 @@ public class Cardapio {
     public Cardapio(String nomeArquivo) throws IOException {
     Path arquivo = Paths.get(nomeArquivo);
     String conteudoArquivo = Files.readString(arquivo);
-    IO.println(conteudoArquivo);
+    String[] linhas = conteudoArquivo.split("\n");
+    IO.println(linhas[0]);
+
 
     ItemCardapio iten1 = new ItemCardapio(1L,"item1","item1",2.3,CategoriaCardapio.BEBIDAS);
 

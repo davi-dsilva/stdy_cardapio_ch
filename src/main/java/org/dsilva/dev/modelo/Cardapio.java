@@ -15,60 +15,42 @@ public class Cardapio {
     String conteudoArquivo = Files.readString(arquivo);
     String[] linhas = conteudoArquivo.split("\n");
 
+    itens = new ItemCardapio[linhas.length];
     for(int i = 0; i < linhas.length; i++) {
         String linha = linhas[i];
         if(nomeArquivo.endsWith(".csv")) {
+            //lendo arquivo.csv
             String[] partes = linha.split(";");
-            for (int j = 0; j < partes.length; j++) {
-                String parte = partes[j];
-                IO.println("Parte: " + j + ":" + parte);
-                long id = Long.parseLong(partes[0]);
-                String nome = partes[1];
-                String descricao = partes[2];
-                double preco = Double.parseDouble(partes[3]);
-                CategoriaCardapio categoria = CategoriaCardapio.valueOf(partes[4]);
+            long id = Long.parseLong(partes[0]);
+            String nome = partes[1];
+            String descricao = partes[2];
+            double preco = Double.parseDouble(partes[3]);
+            CategoriaCardapio categoria = CategoriaCardapio.valueOf(partes[4]);
 
-                ItemCardapio item;
+            ItemCardapio item;
 
-                boolean impostoIsento = Boolean.parseBoolean(partes[7]);
+            boolean impostoIsento = Boolean.parseBoolean(partes[7]);
 
-
+            if (impostoIsento) {
+                item = new ItemCardapioIsento(id, nome, descricao, preco, categoria);
+            } else {
                 item = new ItemCardapio(id, nome, descricao, preco, categoria);
-
-                boolean emPromocao = Boolean.parseBoolean(partes[5]);
-                if (emPromocao) {
-                    double precoComDesconto = Double.parseDouble(partes[6]);
-                    item.setPromocao(precoComDesconto);
-                }
-
-
-                /*
-                 long id 0
-                 String nome 1
-                 String descricao 2
-                 double preco; 3
-                 CategoriaCardapio categoria 4;
-
-                 boolean emPromocao 5;
-                 double precoComDesconto OPTIONAL 6;
-
-                 boolean impostoIsento (não é atributos) 7
-                 */
-
-
             }
+
+            boolean emPromocao = Boolean.parseBoolean(partes[5]);
+            if (emPromocao) {
+                double precoComDesconto = Double.parseDouble(partes[6]);
+                item.setPromocao(precoComDesconto);
+            }
+
+            itens[i] = item;
+
         }else if(nomeArquivo.endsWith(".json")) {
-            
+            //lendo arquvi.json
         }else {
             IO.println("extensão de arquivo Não foi reconhecida");
         }
     }
-
-    ItemCardapio iten1 = new ItemCardapio(1L,"item1","item1",2.3,CategoriaCardapio.BEBIDAS);
-
-        itens = new ItemCardapio[1];
-        getItens()[0] = iten1;
-
     }
 
     public double getSomaDosPrecos() {

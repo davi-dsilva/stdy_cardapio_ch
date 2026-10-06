@@ -3,8 +3,10 @@ package org.dsilva.dev.cli;
 import org.dsilva.dev.modelo.Cardapio;
 import org.dsilva.dev.modelo.ItemCardapio;
 
+import java.io.IOException;
+
 public class Main {
-    void main() {
+    void main() throws IOException {
 
     String nomeArquivo = IO.readln("Digite o nome do Arquvi: ");
     Cardapio cardapio = new Cardapio(nomeArquivo);  //criados anteriormente como ItemCardapio[]

@@ -4,7 +4,9 @@ public class Cardapio {
     private ItemCardapio[] itens; //private só pode ser acessado dentro da mesma classe
 
     //instanciando a classe ItemCardapio com construtor
-    public Cardapio() { //construtor
+    public Cardapio(String nomeArquivo) {
+    IO.println("Arquivo: " + nomeArquivo);
+        //construtor
         ItemCardapio item1 = new ItemCardapio(50L, "Refresco do Chaves", "Suco de limão que parece de tamarindo e tem gosto de groselha", 2.99, CategoriaCardapio.BEBIDAS);
 
         ItemCardapio item2 = new ItemCardapio(2L, "Sanduiche de Presunto do Chaves", "Sanduiche de presunto simples, mas feito com muito amor.", 3.50, CategoriaCardapio.PRATOS_PRINCIPAIS);

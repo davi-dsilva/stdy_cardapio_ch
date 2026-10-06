@@ -1,9 +1,13 @@
-import org.dsilva.dev.modelo.ItemCardapio;
+package org.dsilva.dev.cli;
+
 import org.dsilva.dev.modelo.Cardapio;
+import org.dsilva.dev.modelo.ItemCardapio;
 
-void main() {
+public class Main {
+    void main() {
 
-    Cardapio cardapio = new Cardapio();  //criados anteriormente como ItemCardapio[]
+    String nomeArquivo = IO.readln("Digite o nome do Arquvi: ");
+    Cardapio cardapio = new Cardapio(nomeArquivo);  //criados anteriormente como ItemCardapio[]
 
     String linha = IO.readln("Digite um ID de um item de cardápio: "); //recebe valor
     long idSelecionado = Long.parseLong(linha); //armazena valor na variavel idSelecionado
@@ -38,6 +42,7 @@ void main() {
     for (ItemCardapio item : cardapio.getItens()) {
         if (item.getPreco() <= precoLimite) {
             IO.println("Preço menor que " + precoLimite + ": " + item.getPreco());
+            }
         }
     }
 }

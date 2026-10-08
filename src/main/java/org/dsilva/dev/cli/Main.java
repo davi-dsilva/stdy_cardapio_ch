@@ -28,8 +28,8 @@ public class Main {
         IO.println("Preco: de " + itemSelecionado.getPreco() + " por " + itemSelecionado.getPrecoComDesconto());
         System.out.println("Porcentagem de Desconto: " + porcentagemDesconto);
     } else {
-        IO.print("Preco: " + itemSelecionado.getPreco());
-        IO.println("Item não está em promoçao");
+        IO.println("Preco: " + itemSelecionado.getPreco());
+        IO.println("\nItem não está em promoção\n");
     }
     IO.println("Imposto: " + itemSelecionado.getImposto());
 

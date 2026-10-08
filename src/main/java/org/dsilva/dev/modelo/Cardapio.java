@@ -54,14 +54,50 @@ public class Cardapio {
             linha = linha.replace('\"', ' ');
             String[] partes = linha.split(",");
 
-            for (String parte : partes){
 
-                String[] propriedadeEvalor = parte.split(":");
-               //IO.println(propriedadeEvalor[0]);
-               String valor = propriedadeEvalor[1].trim();
-               IO.println(valor);
+            String parteID = partes[0];
+            String[] propriedadeEvalorID = parteID.split(":");
+            String valorID = propriedadeEvalorID[1].trim();
+            long id = Long.parseLong(valorID);
 
+            String parteNome = partes[1];
+            String[] propriedadeEvalorNome = parteNome.split(":");
+            String nome = propriedadeEvalorNome[1].trim();
+
+
+            String parteDesc = partes[2];
+            String[] propriedadeEvalorDesc = parteDesc.split(":");
+            String descricao = propriedadeEvalorDesc[1].trim();
+
+            String partePreco = partes[3];
+            String[] propriedadeEvalorPreco = partePreco.split(":");
+            String valorPreco = propriedadeEvalorPreco[1].trim();
+            double preco = Double.parseDouble(valorPreco);
+
+           String parteCategoria = partes[4];
+           String[] propriedadeEvalorCategoria = parteCategoria.split(":");
+           String valorCategoria = propriedadeEvalorCategoria[1].trim();
+           CategoriaCardapio categoria = CategoriaCardapio.valueOf(valorCategoria);
+
+
+            String parteEmPromocao = partes[5];
+            String[] propriedadeEvalorEmPromocao = parteEmPromocao.split(":");
+            String valorEmPromocao = propriedadeEvalorEmPromocao[1].trim();
+
+            ItemCardapio item = new ItemCardapio(id, nome, descricao, preco, categoria);
+            itens [i] = item;
+
+            boolean emPromocao = Boolean.parseBoolean(valorEmPromocao);
+            if (emPromocao) {
+                String partePrecoDesconto = partes[6];
+                String[] propriedadeEvalorPrecoDesconto = partePrecoDesconto.split(":");
+                String valorPrecoDesconto = propriedadeEvalorPrecoDesconto[1].trim();
+                double precoDesconto = Double.parseDouble(valorPrecoDesconto);
+                item.setPromocao(precoDesconto);
             }
+
+
+
         }else {
             IO.println("extensão de arquivo Não foi reconhecida");
         }

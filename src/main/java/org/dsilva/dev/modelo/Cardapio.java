@@ -47,15 +47,20 @@ public class Cardapio {
 
         }else if(nomeArquivo.endsWith(".json")) {
             //lendo arquvi.json
+            linha = linha.replace("[", " ");
+            linha = linha.replace("]", " ");
+            linha = linha.replace("{", " ");
+            linha = linha.replace("}", " ");
+            linha = linha.replace('\"', ' ');
             String[] partes = linha.split(",");
-            for (String parte : partes){
-                parte = parte.replace("[", " ");
-                parte = parte.replace("]", " ");
-                parte = parte.replace("{", " ");
-                parte = parte.replace("}", " ");
-                parte = parte.replace('\"', ' ');
 
-                IO.println(parte);
+            for (String parte : partes){
+
+                String[] propriedadeEvalor = parte.split(":");
+               //IO.println(propriedadeEvalor[0]);
+               String valor = propriedadeEvalor[1].trim();
+               IO.println(valor);
+
             }
         }else {
             IO.println("extensão de arquivo Não foi reconhecida");

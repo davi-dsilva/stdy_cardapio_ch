@@ -29,7 +29,8 @@ void main() {
 
     String[] pedacos = teste.split(" ");
     IO.println(pedacos.length);
-
+    //.trim limpa espaços antes e depois de uma string
+    IO.println("trim método:" + pedacos[3].trim());
     for (String pedaco : pedacos) {
         IO.println(pedaco);
     }

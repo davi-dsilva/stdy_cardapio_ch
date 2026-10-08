@@ -47,6 +47,10 @@ public class Cardapio {
 
         }else if(nomeArquivo.endsWith(".json")) {
             //lendo arquvi.json
+            String[] partes = linha.split(",");
+            for (String parte : partes){
+                IO.println(parte);
+            }
         }else {
             IO.println("extensão de arquivo Não foi reconhecida");
         }

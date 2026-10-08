@@ -50,8 +50,11 @@ public class Cardapio {
             String[] partes = linha.split(",");
             for (String parte : partes){
                 parte = parte.replace("[", " ");
+                parte = parte.replace("]", " ");
                 parte = parte.replace("{", " ");
+                parte = parte.replace("}", " ");
                 parte = parte.replace('\"', ' ');
+
                 IO.println(parte);
             }
         }else {
